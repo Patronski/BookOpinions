@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AutoMapper;
+using BookOpinions.App_Start;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -12,10 +14,24 @@ namespace BookOpinions
     {
         protected void Application_Start()
         {
+            ViewEnginesConfiguration.RegisterViewEngines(ViewEngines.Engines);
+            this.RegisterMapper();
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+        }
+
+        private void RegisterMapper()
+        {
+            Mapper.Initialize(e =>
+            {
+                //e.CreateMap<Customer, AllCustomerVm>();
+                //e.CreateMap<Car, CarVm>();
+                //e.CreateMap<Supplier, SupplierVm>()
+                //    .ForMember(vm => vm.NumberOfParts, x => x.MapFrom(suplier => suplier.Parts.Count));
+            });
         }
     }
 }
