@@ -7,21 +7,18 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class Book
+    public class Author
     {
-        public Book()
+        public Author()
         {
-            this.Authors = new HashSet<Author>();
-            this.Opinions = new HashSet<Opinion>();
+            this.Books = new HashSet<Book>();
         }
 
         public int Id { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public int Name { get; set; }
 
-        public ICollection<Author> Authors { get; set; }
-
-        public ICollection<Opinion> Opinions { get; set; }
+        public virtual ICollection<Book> Books { get; set; }
     }
 }
