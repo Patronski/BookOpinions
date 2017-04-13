@@ -8,6 +8,10 @@ namespace BookOpinions.Controllers
 {
     public class HomeController : Controller
     {
+        //избираш си категория на книга измежду много
+        // търсене по заглавие или автор
+        // както и пример с картинки от популярни книги в момента
+        // моя профил за логнат или 
         public ActionResult Index()
         {
             return View();

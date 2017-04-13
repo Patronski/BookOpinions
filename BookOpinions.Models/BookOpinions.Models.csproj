@@ -43,7 +43,11 @@
   <ItemGroup>
     <Compile Include="EntityModels\Author.cs" />
     <Compile Include="EntityModels\Book.cs" />
+    <Compile Include="EntityModels\BookForm.cs" />
+    <Compile Include="EntityModels\BookGenre.cs" />
+    <Compile Include="EntityModels\MediaType.cs" />
     <Compile Include="EntityModels\Opinion.cs" />
+    <Compile Include="EntityModels\WritingTechnique.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
