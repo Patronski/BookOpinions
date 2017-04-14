@@ -20,8 +20,8 @@
         [Required]
         public string Title { get; set; }
 
-        public ICollection<Author> Authors { get; set; }
+        public virtual ICollection<Author> Authors { get; set; }
 
-        public ICollection<Opinion> Opinions { get; set; }
+        public virtual ICollection<Opinion> Opinions { get; set; }
     }
 }

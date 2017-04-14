@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using BookOpinions.Models;
+using BookOpinions.Models.ViewModels.Manage;
 
 namespace BookOpinions.Controllers
 {
