@@ -1,11 +1,15 @@
-﻿using System;
+﻿using BookOpinions.Models.Attributes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace BookOpinions.Controllers
 {
+    //[MyAuthorize(Roles = "Admin,User")]
+    [Authorize]
     public class HomeController : Controller
     {
         //избираш си категория на книга измежду много

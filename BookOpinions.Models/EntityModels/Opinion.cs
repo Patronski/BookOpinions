@@ -15,5 +15,7 @@
 
         [Range(1,10)]
         public int Rating { get; set; }
+
+        public virtual ApplicationUser Author { get; set; }
     }
 }
