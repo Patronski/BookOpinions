@@ -52,6 +52,10 @@
       <Project>{A7A8596C-312E-4382-8987-F7EACBB5F6D1}</Project>
       <Name>BookOpinions.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BookOpinions.Models\BookOpinions.Models.csproj">
+      <Project>{85640b5e-d795-4f07-8f37-a31c5a2aada7}</Project>
+      <Name>BookOpinions.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

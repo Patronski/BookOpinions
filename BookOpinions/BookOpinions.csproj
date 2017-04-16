@@ -304,6 +304,10 @@
       <Project>{85640B5E-D795-4F07-8F37-A31C5A2AADA7}</Project>
       <Name>BookOpinions.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\BookOpinions.Services\BookOpinions.Services.csproj">
+      <Project>{2f273479-76ee-4ea8-bfe2-c29071da11b3}</Project>
+      <Name>BookOpinions.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />

@@ -8,7 +8,7 @@ using System.Web.Mvc;
 namespace BookOpinions.Controllers
 {
     //[Authorize(Roles = "Admin")]
-    [MyAuthorize(Roles = "Admin")]
+    //[MyAuthorize(Roles = "Admin")]
     public class AdminController : Controller
     {
         // GET: Admin

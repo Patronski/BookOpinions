@@ -13,7 +13,7 @@
         {
             var roles = this.Roles.Split(',');
             if (filterContext.HttpContext.Request.IsAuthenticated &&
-                roles.Any(filterContext.HttpContext.User.IsInRole))
+                !roles.Any(filterContext.HttpContext.User.IsInRole))
             {
                 filterContext.Result = new ViewResult
                 {

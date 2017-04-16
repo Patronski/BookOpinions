@@ -8,8 +8,8 @@ using System.Web.Security;
 
 namespace BookOpinions.Controllers
 {
-    //[MyAuthorize(Roles = "Admin,User")]
-    [Authorize]
+    [MyAuthorize(Roles = "Admin")]
+    //[Authorize]
     public class HomeController : Controller
     {
         //избираш си категория на книга измежду много
