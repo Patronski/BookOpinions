@@ -18,6 +18,13 @@ namespace BookOpinions.Controllers
         // моя профил за логнат или 
         public ActionResult Index()
         {
+            var usename = this.User.Identity.Name;
+            var vm = "viewmodel";
+            if (vm == null)
+            {
+                return this.HttpNotFound();
+            }
+
             return View();
         }
 
