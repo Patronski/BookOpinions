@@ -280,6 +280,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\Unauthorized.cshtml" />
+    <Content Include="Views\Home\UploadFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -289,6 +290,7 @@
     <Folder Include="Areas\Forum\Controllers\" />
     <Folder Include="Areas\Forum\Models\" />
     <Folder Include="Areas\Forum\Views\Shared\" />
+    <Folder Include="UploadedFiles\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Market\" />
   </ItemGroup>

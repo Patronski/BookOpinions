@@ -15,6 +15,7 @@ using BookOpinions.Models.EntityModels;
 namespace BookOpinions.Controllers
 {
     [Authorize]
+    [RoutePrefix("account")]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;

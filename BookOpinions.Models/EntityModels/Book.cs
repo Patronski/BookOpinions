@@ -20,6 +20,8 @@
         [Required]
         public string Title { get; set; }
 
+        public Image Image { get; set; }
+
         public virtual ICollection<Author> Authors { get; set; }
 
         public virtual ICollection<Opinion> Opinions { get; set; }
