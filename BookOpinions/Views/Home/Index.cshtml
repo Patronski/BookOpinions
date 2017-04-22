@@ -9,32 +9,32 @@
     <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
 </div>
 
-<div class="row">
-    <div class="col-md-12">
-        <h2>Popular Books</h2>
-        <div>
-            @foreach (var book in Model)
-            {
-                <div class="col-md-4">
-                    <h2>@book.Title</h2>
-                    <img alt="book" src="@book.ImgUrl" />
-                    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-                </div>
-            }
-        </div>
+<section>
+    <div class="well col-md-12">
+        <h2 class="media-heading">Popular Books</h2>
+        @{int picsInRow = 6;}
+        @{int rows = 3;}
+        @for (int i = 0; i < rows; i++)
+        {
+            <div class="row">
+                @foreach (var book in Model.Skip(i * picsInRow).Take(picsInRow))
+                {
+                    <div class="col-xs-6 col-md-2">
+                        <h3>@book.Title</h3>
+                        <img class="img-responsive" alt="@book.Title" src="@book.ImgUrl" />
+                        <p>
+                            @Html.ActionLink("Learn more &raquo;", "for", "books", new { id = @book.Id}, new {@class = "btn btn-default"})
+                        </p>
+                    </div>
+                }
+            </div>
+        }
     </div>
+    <br />
     <p class="col-md-12">
         Start from reading our most popular books or login to see our full collection and recommendations.
     </p>
-    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
+    <p>
+    
+    <a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+</section>
