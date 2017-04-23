@@ -10,8 +10,6 @@ using System.Web.Security;
 
 namespace BookOpinions.Controllers
 {
-    //[MyAuthorize(Roles = "Admin")]
-    //[Authorize]
     public class HomeController : BaseController
     {
         private HomeService service;

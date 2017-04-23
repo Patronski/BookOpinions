@@ -24,7 +24,6 @@ namespace BookOpinions.Data.Migrations
                 var role = new IdentityRole("Admin");
                 manager.Create(role);
             }
-
             if (!context.Roles.Any(r => r.Name == "User"))
             {
                 var role = new IdentityRole("User");
