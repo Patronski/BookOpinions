@@ -246,7 +246,9 @@
     <Content Include="Scripts\respond.matchmedia.addListener.js" />
     <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -281,6 +283,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\Unauthorized.cshtml" />
+    <Content Include="Views\Home\UploadFile.cshtml" />
     <Content Include="Views\Books\Add.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -291,6 +294,7 @@
     <Folder Include="Areas\Forum\Controllers\" />
     <Folder Include="Areas\Forum\Models\" />
     <Folder Include="Areas\Forum\Views\Shared\" />
+    <Folder Include="UploadedFiles\" />
     <Folder Include="Views\Admin\" />
     <Folder Include="Views\Market\" />
   </ItemGroup>
