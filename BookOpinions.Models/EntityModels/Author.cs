@@ -17,7 +17,7 @@
         public int Id { get; set; }
 
         [Required]
-        public int Name { get; set; }
+        public string Name { get; set; }
 
         public virtual ICollection<Book> Books { get; set; }
     }

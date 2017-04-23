@@ -14,9 +14,9 @@ namespace BookOpinions.Data
         {
         }
 
-        public virtual DbSet<Book> Books { get; set; }
-        public virtual DbSet<Author> Authors { get; set; }
-        public virtual DbSet<Opinion> Opinions { get; set; }
+        public virtual IDbSet<Book> Books { get; set; }
+        public virtual IDbSet<Author> Authors { get; set; }
+        public virtual IDbSet<Opinion> Opinions { get; set; }
 
         public static BookOpinionsContext Create()
         {

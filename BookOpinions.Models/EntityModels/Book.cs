@@ -25,5 +25,7 @@
         public virtual ICollection<Author> Authors { get; set; }
 
         public virtual ICollection<Opinion> Opinions { get; set; }
+
+        public virtual ICollection<Rating> Rating { get; set; }
     }
 }

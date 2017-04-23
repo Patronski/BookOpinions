@@ -6,12 +6,20 @@ using System.Web.Mvc;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using BookOpinions;
 using BookOpinions.Controllers;
+using TestStack.FluentMVCTesting;
 
 namespace BookOpinions.Tests.Controllers
 {
     [TestClass]
     public class HomeControllerTest
     {
+        [TestMethod]
+        public void Index_ShouldPass()
+        {
+            var controller = new HomeController();
+            controller.WithCallTo(c => c.Index()).ShouldRenderDefaultView();
+        }
+
         [TestMethod]
         public void Index()
         {

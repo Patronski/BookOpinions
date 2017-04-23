@@ -13,9 +13,8 @@
 
         public string Comment { get; set; }
 
-        [Range(1,10)]
-        public int Rating { get; set; }
+        public virtual ApplicationUser User { get; set; }
 
-        public virtual ApplicationUser Author { get; set; }
+        public virtual Book Book { get; set; }
     }
 }

@@ -283,7 +283,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\Unauthorized.cshtml" />
-    <Content Include="Views\Books\Add.cshtml" />
+    <Content Include="Views\Book\Add.cshtml" />
     <Content Include="Views\Home\UploadFile.cshtml" />
   </ItemGroup>
   <ItemGroup>
