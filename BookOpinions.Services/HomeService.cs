@@ -11,7 +11,7 @@
     {
         public IEnumerable<PopularBookViewModel> GetPopularBooks()
         {
-            var books = this.Context.Books.Take(10).Select(b=> new PopularBookViewModel
+            var books = this.Context.Books.Take(12).Select(b=> new PopularBookViewModel
             {
                 Id = b.Id,
                 ImgUrl = b.Image.Url,

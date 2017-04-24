@@ -1,6 +1,7 @@
 ﻿using BookOpinions.Models.BindingModels.Book;
 using BookOpinions.Models.EntityModels;
 using BookOpinions.Services;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,17 +25,16 @@ namespace BookOpinions.Controllers
         }
 
         [HttpPost]
-        public void Add(AddBookBindingModel bm)
+        public ActionResult Add(AddBookBindingModel bm)
         {
-            bm.AuthorName = "Ivan Vazov";
-            bm.Grade = 4;
-            bm.ImageUrl = "url//";
-            bm.Opinion = "mnogo dobra";
-            bm.Title = "Опълченците на Шипка";
             if (ModelState.IsValid)
             {
-                this.service.AddNewBook(bm);
+                this.CurrentUser = UserManager.FindById(this.User.Identity.GetUserId());
+                this.service.AddNewBook(bm, this.CurrentUser);
+
+                return this.RedirectToAction("index", "home");
             }
+            return this.RedirectToAction("add");
         }
     }
 }

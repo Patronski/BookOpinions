@@ -11,11 +11,30 @@ namespace BookOpinions.Services
 {
     public class BookService : Service
     {
-        public void AddNewBook(AddBookBindingModel bm)
+        public void AddNewBook(AddBookBindingModel bm, ApplicationUser currentUser)
         {
-            Book book = Mapper.Map<AddBookBindingModel, Book>(bm);
+            var authors = bm
+                .AuthorName
+                .Split(',')
+                .Select(name => new Author
+                {
+                    Name = name,
+                })
+                .ToList();
 
-            this.Context.Books.Add(book);
+            Image image = new Image()
+            {
+                Url = bm.ImageUrl
+            };
+
+            Book book = new Book()
+            {
+                Authors = authors,
+                Title = bm.Title,
+                Image = image,
+            };
+
+             this.Context.Books.Add(book);
             this.Context.SaveChanges();
         }
     }

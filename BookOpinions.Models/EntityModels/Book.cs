@@ -13,6 +13,7 @@
         {
             this.Authors = new HashSet<Author>();
             this.Opinions = new HashSet<Opinion>();
+            this.Rating = new HashSet<Rating>();
         }
 
         public int Id { get; set; }
@@ -22,6 +23,7 @@
 
         public Image Image { get; set; }
 
+        [Display(Name = "Authors separated by comma(,)", ShortName = "Authors")]
         public virtual ICollection<Author> Authors { get; set; }
 
         public virtual ICollection<Opinion> Opinions { get; set; }
