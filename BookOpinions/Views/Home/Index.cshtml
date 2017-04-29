@@ -1,6 +1,6 @@
-﻿@model IEnumerable<BookOpinions.Models.ViewModels.Home.PopularBookViewModel>
+﻿@model IEnumerable<BookOpinions.Models.ViewModels.Home.SimpleBookViewModel>
 @{
-    ViewBag.Title = "We make good books popular";
+    ViewBag.Title = "Book Opinions";
 }
 
 <section>
@@ -18,7 +18,7 @@
                         <p class="panel-title">@book.Title</p>
                         <img class="img-responsive" alt="@book.Title" src="@book.ImgUrl" />
                         <p>
-                            @Html.ActionLink("Learn more", "for", "books", new { id = @book.Id}, new {@class = "btn btn-default"})
+                            @Html.ActionLink("Learn more", $"{@book.Id}", "book", new { id = @book.Id}, new {@class = "btn btn-default"})
                         </p>
                     </div>
                 }

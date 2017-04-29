@@ -6,7 +6,7 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class PopularBookViewModel
+    public class SimpleBookViewModel
     {
         public int Id { get; set; }
         public string Title { get; set; }

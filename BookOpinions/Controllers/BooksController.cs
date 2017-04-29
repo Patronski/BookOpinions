@@ -1,5 +1,6 @@
 ﻿using BookOpinions.Models.BindingModels.Book;
 using BookOpinions.Models.EntityModels;
+using BookOpinions.Models.ViewModels.Home;
 using BookOpinions.Services;
 using Microsoft.AspNet.Identity;
 using System;
@@ -35,6 +36,12 @@ namespace BookOpinions.Controllers
                 return this.RedirectToAction("index", "home");
             }
             return this.RedirectToAction("add");
+        }
+
+        public ActionResult All()
+        {
+            IEnumerable<SimpleBookViewModel> vms = this.service.GetAllBooks();
+            return View(vms);
         }
     }
 }

@@ -35,7 +35,7 @@ namespace BookOpinions.Controllers
                 return this.HttpNotFound();
             }
 
-            IEnumerable<PopularBookViewModel> vms = this.service.GetPopularBooks();
+            IEnumerable<SimpleBookViewModel> vms = this.service.GetPopularBooks();
 
             return View(vms);
         }

@@ -9,9 +9,9 @@
 
     public class HomeService : Service
     {
-        public IEnumerable<PopularBookViewModel> GetPopularBooks()
+        public IEnumerable<SimpleBookViewModel> GetPopularBooks()
         {
-            var books = this.Context.Books.Take(12).Select(b=> new PopularBookViewModel
+            var books = this.Context.Books.Take(12).Select(b=> new SimpleBookViewModel
             {
                 Id = b.Id,
                 ImgUrl = b.Image.Url,

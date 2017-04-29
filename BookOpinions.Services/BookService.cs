@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using AutoMapper;
 using BookOpinions.Models.BindingModels.Book;
 using BookOpinions.Models.EntityModels;
+using BookOpinions.Models.ViewModels.Home;
 
 namespace BookOpinions.Services
 {
@@ -36,6 +37,18 @@ namespace BookOpinions.Services
 
              this.Context.Books.Add(book);
             this.Context.SaveChanges();
+        }
+
+        public IEnumerable<SimpleBookViewModel> GetAllBooks()
+        {
+            var books = this.Context.Books.Select(b => new SimpleBookViewModel
+            {
+                Id = b.Id,
+                ImgUrl = b.Image.Url,
+                Title = b.Title
+            });
+
+            return books;
         }
     }
 }
