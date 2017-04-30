@@ -1,4 +1,4 @@
-﻿namespace BookOpinions.Models.ViewModels.Home
+﻿namespace BookOpinions.Models.ViewModels.Book
 {
     using BookOpinions.Models.EntityModels;
     using System;
@@ -7,11 +7,12 @@
     using System.Text;
     using System.Threading.Tasks;
 
-    public class SimpleBookViewModel
+    public class AboutBookViewModel
     {
         public int Id { get; set; }
         public string Title { get; set; }
         public string ImgUrl { get; set; }
         public Author Author { get; set; }
+        public Rating Rating { get; set; }
     }
 }

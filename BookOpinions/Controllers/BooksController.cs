@@ -1,5 +1,6 @@
 ﻿using BookOpinions.Models.BindingModels.Book;
 using BookOpinions.Models.EntityModels;
+using BookOpinions.Models.ViewModels.Book;
 using BookOpinions.Models.ViewModels.Home;
 using BookOpinions.Services;
 using Microsoft.AspNet.Identity;
@@ -38,10 +39,22 @@ namespace BookOpinions.Controllers
             return this.RedirectToAction("add");
         }
 
-        public ActionResult All()
+        [Route("book/all/{sortOrder?}")]
+        public ActionResult All(string sortOrder)
         {
-            IEnumerable<SimpleBookViewModel> vms = this.service.GetAllBooks();
+            IEnumerable<SimpleBookViewModel> vms;
+            
+            vms = this.service.GetAllBooksBySortOrder(sortOrder);
+            
             return View(vms);
+        }
+
+        [Route("book/{id}")]
+        public ActionResult About(int id)
+        {
+            Book vm = this.service.GetBookById(id);
+
+            return View(vm);
         }
     }
 }

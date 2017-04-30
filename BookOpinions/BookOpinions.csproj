@@ -291,6 +291,7 @@
     <Content Include="Views\Book\Add.cshtml" />
     <Content Include="Views\Home\UploadFile.cshtml" />
     <Content Include="Views\Book\All.cshtml" />
+    <Content Include="Views\Book\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

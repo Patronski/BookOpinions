@@ -1,0 +1,26 @@
+﻿@model BookOpinions.Models.EntityModels.Book
+@{
+    ViewBag.Title = "About";
+}
+
+<h2>@Model.Title</h2>
+
+<img class="img-responsive img-rounded" alt="picture of the book" src="@Model.Image.Url" />
+<div class="">
+    <p>Authors: </p>
+    @foreach (var author in Model.Authors)
+    {
+        @author.Name
+    }
+
+    @*@foreach (var grade in Model.Rating)
+        {
+            @grade
+        }*@
+
+    @foreach (var opinion in Model.Opinions)
+    {
+        <p>By @opinion.User.Name </p>
+        <p>Comment: @opinion.Comment </p>
+    }
+</div>

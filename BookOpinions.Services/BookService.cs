@@ -35,20 +35,70 @@ namespace BookOpinions.Services
                 Image = image,
             };
 
-             this.Context.Books.Add(book);
+            this.Context.Books.Add(book);
             this.Context.SaveChanges();
         }
 
-        public IEnumerable<SimpleBookViewModel> GetAllBooks()
+        public IEnumerable<SimpleBookViewModel> GetAllBooksBySortOrder(string sortOrder)
         {
-            var books = this.Context.Books.Select(b => new SimpleBookViewModel
+            IEnumerable<SimpleBookViewModel> books;
+
+            var sortToLower = sortOrder != null ? sortOrder.ToLower() : null;
+
+            switch (sortToLower)
             {
-                Id = b.Id,
-                ImgUrl = b.Image.Url,
-                Title = b.Title
-            });
+                case "author":
+                    books = this.Context.Books
+                        .Select(b => new SimpleBookViewModel
+                        {
+                            Id = b.Id,
+                            ImgUrl = b.Image.Url,
+                            Title = b.Title,
+                            Author = b.Authors.FirstOrDefault() //Todo
+                        })
+                        .OrderBy(sb => sb.Author.Name);
+                    break;
+                case "title":
+                    books = this.Context.Books
+                        .Select(b => new SimpleBookViewModel
+                        {
+                            Id = b.Id,
+                            ImgUrl = b.Image.Url,
+                            Title = b.Title,
+                            Author = b.Authors.FirstOrDefault()
+                        })
+                        .OrderBy(sb=> sb.Title);
+                    break;
+                case "newfirst":
+                    books = this.Context.Books
+                        .Select(b => new SimpleBookViewModel
+                        {
+                            Id = b.Id,
+                            ImgUrl = b.Image.Url,
+                            Title = b.Title,
+                            Author = b.Authors.FirstOrDefault()
+                        });
+                    books = books
+                        .Reverse();
+                    break;
+                default:
+                    books = this.Context.Books
+                        .Select(b => new SimpleBookViewModel
+                        {
+                            Id = b.Id,
+                            ImgUrl = b.Image.Url,
+                            Title = b.Title,
+                            Author = b.Authors.FirstOrDefault()
+                        });
+                    break;
+            }
 
             return books;
+        }
+
+        public Book GetBookById(int id)
+        {
+            return this.Context.Books.Find(id);
         }
     }
 }

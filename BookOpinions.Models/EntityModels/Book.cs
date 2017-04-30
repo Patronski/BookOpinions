@@ -21,7 +21,7 @@
         [Required]
         public string Title { get; set; }
 
-        public Image Image { get; set; }
+        public virtual Image Image { get; set; }
 
         [Display(Name = "Authors separated by comma(,)", ShortName = "Authors")]
         public virtual ICollection<Author> Authors { get; set; }

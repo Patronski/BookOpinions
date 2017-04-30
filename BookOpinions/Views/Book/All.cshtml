@@ -3,8 +3,28 @@
     ViewBag.Title = "All";
 }
 
-<h2>All</h2>
 
+<div class="">
+    <h2 class="col-lg-1">All</h2>
+    <br />
+    <label for="sortTypes" class="col-lg-1 control-label ">Sort by: </label>
+    <div id="sortTypes" class="col-lg-10">
+        <ul class="nav navbar-nav">
+            <li> @Html.ActionLink("Title", "all", "book", routeValues: new { sortOrder = "title" }, htmlAttributes: null)</li>
+            <li>@Html.ActionLink("Author", "All", "Book", routeValues: new { sortOrder = "author" }, htmlAttributes: null)</li>
+            <li class="dropdown">
+                <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true">Creation Date <span class="caret"></span></a>
+                <ul class="dropdown-menu" role="menu">
+                    <li>@Html.ActionLink("Old first", "All", "Book", routeValues: new { sortOrder = "Oldfirst" }, htmlAttributes: null)</li>
+                    <li>@Html.ActionLink("New first", "All", "Book", routeValues: new { sortOrder = "newFirst" }, htmlAttributes: null)</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>
+<hr />
+<hr />
+<hr />
 @{int picsInRow = 6;}
 @for (int i = 0; i < (Model.Count() / picsInRow + Model.Count() % picsInRow); i++)
 {
@@ -13,11 +33,45 @@
                 {
             <div class="col-xs-6 col-md-2">
                 <p class="panel-title">@book.Title</p>
-                <img class="img-responsive" alt="@book.Title" src="@book.ImgUrl" />
+                <a href="/book/@book.Id">
+                    <img class="img-responsive" alt="picture of @book.Title" src="@book.ImgUrl" />
+                </a>
                 <p>
-                    @Html.ActionLink("Learn more", "for", "books", new { id = @book.Id }, new { @class = "btn btn-default" })
+                    @Html.ActionLink("Learn more", "About", "book", routeValues: new { id = @book.Id }, htmlAttributes: new { @class = "btn btn-default" })
                 </p>
             </div>
         }
     </div>
 }
+
+@*<form action="/book/all/title">
+        <button class="btn btn-default">Title</button>
+    </form>
+    <form action="/book/all/">
+        <button class="btn btn-default">Date</button>
+    </form>*@
+
+@*<form class="form-horizontal" method="get">
+        <fieldset>
+            <legend>All</legend>
+            <div class="form-group">
+                <label for="select" class="col-lg-2 control-label">Selects</label>
+                <div class="col-lg-10">
+                    <select class="form-control" id="select">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                    <br>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Go</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>*@
