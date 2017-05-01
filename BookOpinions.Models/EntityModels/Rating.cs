@@ -13,7 +13,7 @@ namespace BookOpinions.Models.EntityModels
 
         [Required]
         [Range(1, 5)]
-        public int Grade { get; set; }
+        public int Rate { get; set; }
 
         [Required]
         public virtual Book Book { get; set; }

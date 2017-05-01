@@ -13,14 +13,20 @@
         @author.Name
     }
 
-    @*@foreach (var grade in Model.Rating)
-        {
-            @grade
-        }*@
+    @foreach (var grade in Model.Rating)
+    {
+        @grade.
+    }
 
     @foreach (var opinion in Model.Opinions)
     {
         <p>By @opinion.User.Name </p>
         <p>Comment: @opinion.Comment </p>
     }
+
+    <div class="tr" style="background-color:#f1f1f1;">
+        <div class="td0">Please rate this school</div>
+        <div class="td">@Html.Partial("_VoteNow", Model.Id.ToString())</div>
+        <div class="td">@Html.Partial("_VoteShow", Model.Rating)</div>
+    </div>
 </div>
