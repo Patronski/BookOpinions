@@ -15,9 +15,9 @@
                 @foreach (var book in Model.Skip(i * picsInRow).Take(picsInRow))
                 {
                     <div class="col-xs-6 col-md-2">
-                        <p class="panel-title">@book.Title</p>
+                        <h4 class="panel-title">@book.Title</h4>
                         <a href="/book/@book.Id">
-                            <img class="img-responsive" alt="picture of @book.Title" src="@book.ImgUrl" />
+                            <img class="book-card" alt="picture of @book.Title" src="@book.ImgUrl" />
                         </a>
                         <p>
                             @Html.ActionLink("Learn more", "About", "book", routeValues: new { id = @book.Id}, htmlAttributes: new {@class = "btn btn-default"})
@@ -28,6 +28,8 @@
         }
     </div>
     <hr />
-    <p class="col-md-12">Start from reading our most popular books or login to see our full collection and recommendations.</p>
-    <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    <p class="col-md-12">
+        Start from reading our most popular books or login to see our full collection and recommendations.
+        <a class="btn-link" href="/account/register">&raquo;Register here</a> or <a class="btn-link" href="/account/login">Log in&raquo;</a>
+    </p>
 </section>
