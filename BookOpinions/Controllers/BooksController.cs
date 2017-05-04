@@ -17,17 +17,20 @@ namespace BookOpinions.Controllers
     public class BookController : BaseController
     {
         private BookService service;
+
         public BookController()
         {
             this.service = new BookService();
         }
-        // GET: Books
+        
+        [Route("book/add")]
         public ActionResult Add()
         {
             return View();
         }
 
         [HttpPost]
+        [Route("book/add")]
         public ActionResult Add(AddBookBindingModel bm)
         {
             if (ModelState.IsValid)
@@ -35,7 +38,7 @@ namespace BookOpinions.Controllers
                 this.CurrentUser = UserManager.FindById(this.User.Identity.GetUserId());
                 this.service.AddNewBook(bm, this.CurrentUser);
 
-                return this.RedirectToAction("index", "home");
+                return this.RedirectToAction("all", "book");
             }
             return this.RedirectToAction("add");
         }
@@ -58,6 +61,7 @@ namespace BookOpinions.Controllers
             return View(vm);
         }
 
+        [Route("book/SendRating/{vote}/{s}/{id}/{url}")]
         public JsonResult SendRating(string vote, string s, string id, string url)
         {
             int autoId = 0;

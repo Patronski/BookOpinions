@@ -11,11 +11,11 @@
 {
     <div id="ratingDiv" class="smallText">
         Poor
-        <img src="/images/whitestar.gif" alt="" class="ratingStar" data-value="1" />
-        <img src="/images/whitestar.gif" alt="" class="ratingStar" data-value="2" />
-        <img src="/images/whitestar.gif" alt="" class="ratingStar" data-value="3" />
-        <img src="/images/whitestar.gif" alt="" class="ratingStar" data-value="4" />
-        <img src="/images/whitestar.gif" alt="" class="ratingStar" data-value="5" /> Excellent
+        <img src="~/Content/images/white-star-icon.png" alt="" class="ratingStar" data-value="1" />
+        <img src="~/Content/images/white-star-icon.png" alt="" class="ratingStar" data-value="2" />
+        <img src="~/Content/images/white-star-icon.png" alt="" class="ratingStar" data-value="3" />
+        <img src="~/Content/images/white-star-icon.png" alt="" class="ratingStar" data-value="4" />
+        <img src="~/Content/images/white-star-icon.png" alt="" class="ratingStar" data-value="5" /> Excellent
         <label id="lblResult"></label>
     </div>
     <style type="text/css">
@@ -26,22 +26,22 @@
     <script type="text/javascript">
         var clickedFlag = false;
         $(".ratingStar").mouseover(function () {
-            $(this).attr("src", "/images/yellowstar.gif").prevAll("img.ratingStar").attr("src", "/images/yellowstar.gif");
+            $(this).attr("src", "~/Content/images/yellow-star-icon.png").prevAll("img.ratingStar").attr("src", "~/Content/images/yellow-star-icon.png");
         });
-        $(".ratingStar, #radingDiv").mouseout(function () {
-            $(this).attr("src", "/images/whitestar.gif");
+        $(".ratingStar, #ratingDiv").mouseout(function () {
+            $(this).attr("src", "~/Content/images/white-star-icon.png");
         });
         $("#ratingDiv").mouseout(function () {
             if (!clickedFlag)
             {
-                $(".ratingStar").attr("src", "/images/whitestar.gif");
+                $(".ratingStar").attr("src", "~/Content/images/white-star-icon.png");
             }
         });
         $(".ratingStar").click(function () {
             clickedFlag = true;
             $(".ratingStar").unbind("mouseout mouseover click").css("cursor", "default");
 
-            var url = "/Home/SendRating?r=" + $(this).attr("data-value") + "&s=5&id=@Model&url=@url";
+            var url = "/Home/SendRating/" + $(this).attr("data-value") + "/5/@Model" + "/@url";
             $.post(url, null, function (data) {
                 $("#lblResult").html(data);
             });
