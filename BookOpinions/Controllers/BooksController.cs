@@ -37,6 +37,7 @@ namespace BookOpinions.Controllers
             {
                 this.CurrentUser = UserManager.FindById(this.User.Identity.GetUserId());
                 this.service.AddNewBook(bm, this.CurrentUser);
+                TempData["AddedBook"] = $"Successfully added book {bm.Title}";
 
                 return this.RedirectToAction("all", "book");
             }
