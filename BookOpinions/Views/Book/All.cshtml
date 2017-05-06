@@ -1,4 +1,4 @@
-﻿@model IEnumerable<BookOpinions.Models.ViewModels.Home.SimpleBookViewModel>
+﻿@model BookOpinions.Models.ViewModels.Book.AllBooksViewModel
 @{
     ViewBag.Title = "All";
 }
@@ -33,12 +33,21 @@
     </div>
 }
 
-@{int picsInRow = 6;}
-@for (int i = 0; i < (Model.Count() / picsInRow + Model.Count() % picsInRow); i++)
+@{
+    int picsInRow = 6;
+    int picsInPage = picsInRow * 3;
+    int pages = Model.Books.Count() / picsInPage;
+    if (Model.Books.Count() % picsInPage != 0)
+    {
+        pages += 1;
+    }
+}
+
+@for (int j = 0; j < (Model.Books.Count() / picsInRow + Model.Books.Count() % picsInRow); j++)
 {
     <div class="row">
-        @foreach (var book in Model.Skip(i * picsInRow).Take(picsInRow))
-                {
+        @foreach (var book in Model.Books.Skip(j * picsInRow).Take(picsInRow))
+        {
             <div class="col-xs-6 col-md-2">
                 <p class="panel-title">@book.Title</p>
                 <a href="/book/@book.Id">
@@ -50,6 +59,39 @@
             </div>
         }
     </div>
+}
+
+@if (Model.Pager.EndPage > 1)
+{
+    <ul class="pagination">
+        @if (Model.Pager.CurrentPage > 1)
+        {
+            <li>
+                <a href="~/Book/All">First</a>
+            </li>
+            <li>
+                @Html.ActionLink("Previous", "all", "book", routeValues: new { sortOrder = Model.SortOrder, page = (Model.Pager.CurrentPage - 1) }, htmlAttributes: null)
+                @*<a href="~/Book/All?page=@(Model.Pager.CurrentPage - 1)">Previous</a>*@
+            </li>
+        }
+
+        @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
+        {
+            <li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
+                @Html.ActionLink( @page.ToString(), "all", "book", routeValues: new { sortOrder = Model.SortOrder, page = page }, htmlAttributes: null)
+                @*<a href="~/Book/All?page=@page">@page</a>*@
+            </li>    }
+
+        @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
+        {
+            <li>
+                <a href="~/Book/All?page=@(Model.Pager.CurrentPage + 1)">Next</a>
+            </li>
+                            <li>
+                                <a href="~/Book/All?page=@(Model.Pager.TotalPages)">Last</a>
+                            </li>
+        }
+    </ul>
 }
 
 @*<form action="/book/all/title">

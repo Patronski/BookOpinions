@@ -7,6 +7,8 @@ using AutoMapper;
 using BookOpinions.Models.BindingModels.Book;
 using BookOpinions.Models.EntityModels;
 using BookOpinions.Models.ViewModels.Home;
+using BookOpinions.Models.FunctionalityModels;
+using BookOpinions.Models.ViewModels.Book;
 
 namespace BookOpinions.Services
 {
@@ -39,7 +41,7 @@ namespace BookOpinions.Services
             this.Context.SaveChanges();
         }
 
-        public IEnumerable<SimpleBookViewModel> GetAllBooksBySortOrder(string sortOrder)
+        public AllBooksViewModel GetAllBooksBySortOrderForPage(string sortOrder, int? page, int booksOnPage)
         {
             IEnumerable<SimpleBookViewModel> books;
 
@@ -93,7 +95,17 @@ namespace BookOpinions.Services
                     break;
             }
 
-            return books;
+            var pager = new Pager(books.Count(), page, 6 * 3);
+            var viewModel = new AllBooksViewModel
+            {
+                Books = books
+                        .Skip((pager.CurrentPage - 1) * pager.ItemsOnPage)
+                        .Take(pager.ItemsOnPage),
+                Pager = pager,
+                SortOrder = sortOrder
+            };
+
+            return viewModel;
         }
 
         public Book GetBookById(int id)

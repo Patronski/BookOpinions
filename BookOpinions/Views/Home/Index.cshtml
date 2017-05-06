@@ -7,8 +7,9 @@
     <div class="well col-md-12">
         <h2 class="media-heading">Popular Books</h2>
         <p class="col-md-12 lead">Start from reading our most popular books or login to see our full collection and recommendations.</p>
-        @{int picsInRow = 6;}
-        @{int rows = 2;}
+        
+        @{int picsInRow = 6;
+          int rows = 2;}
         @for (int i = 0; i < rows; i++)
         {
             <div class="row">
@@ -17,7 +18,7 @@
                     <div class="col-xs-6 col-md-2">
                         <h4 class="panel-title">@book.Title</h4>
                         <a href="/book/@book.Id">
-                            <img class="book-card" alt="picture of @book.Title" src="@book.ImgUrl" />
+                            <img class="img-thumbnail" alt="picture of @book.Title" src="@book.ImgUrl" />
                         </a>
                         <p>
                             @Html.ActionLink("Learn more", "About", "book", routeValues: new { id = @book.Id}, htmlAttributes: new {@class = "btn btn-default"})
