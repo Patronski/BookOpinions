@@ -1,0 +1,36 @@
+Request log: 
+Request income time: 7.5.2017 г. 18:17:59 ч.
+Request outgoing time: 7.5.2017 г. 18:18:04 ч.
+Request handle timespan: 00:00:05.2336666
+Request URL: http://localhost:59810/
+----------------------------------------
+Request log: 
+Request income time: 7.5.2017 г. 18:18:04 ч.
+Request outgoing time: 7.5.2017 г. 18:18:04 ч.
+Request handle timespan: 00:00:00.0009998
+Request URL: http://localhost:59810/Content/bootstrap.css
+----------------------------------------
+Request log: 
+Request income time: 7.5.2017 г. 18:18:04 ч.
+Request outgoing time: 7.5.2017 г. 18:18:04 ч.
+Request handle timespan: 00:00:00.0010017
+Request URL: http://localhost:59810/Scripts/jquery-3.1.1.js
+----------------------------------------
+Request log: 
+Request income time: 7.5.2017 г. 18:18:04 ч.
+Request outgoing time: 7.5.2017 г. 18:18:04 ч.
+Request handle timespan: 00:00:00.0010004
+Request URL: http://localhost:59810/Scripts/bootstrap.js
+----------------------------------------
+Request log: 
+Request income time: 7.5.2017 г. 18:18:05 ч.
+Request outgoing time: 7.5.2017 г. 18:18:05 ч.
+Request handle timespan: 00:00:00.0486160
+Request URL: http://localhost:59810/Scripts/respond.js
+----------------------------------------
+Request log: 
+Request income time: 7.5.2017 г. 18:18:05 ч.
+Request outgoing time: 7.5.2017 г. 18:18:06 ч.
+Request handle timespan: 00:00:00.0881140
+Request URL: http://localhost:59810/__browserLink/requestData/1a0dbc38152c46d7a17d475acf9809f6?version=2
+----------------------------------------
