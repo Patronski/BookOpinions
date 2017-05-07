@@ -2,6 +2,7 @@
 using BookOpinions.App_Start;
 using BookOpinions.Models.BindingModels.Book;
 using BookOpinions.Models.EntityModels;
+using BookOpinions.Models.ViewModels.Book;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,13 +30,16 @@ namespace BookOpinions
         {
             Mapper.Initialize(e =>
             {
-                //e.CreateMap<AddBookBindingModel, Book>()
-                //.ForMember(b => b.Authors, ce => ce.MapFrom(vm => new Author
-                //{
-                //    Name = vm.AuthorName,
-                //}))
-                //.ForMember(b => b.Rating, ce => ce.MapFrom(vm => vm.Grade));
-                    
+                e.CreateMap<Book, AddBookViewModel>();
+                e.CreateMap<Book, AboutBookViewModel>()
+                    .ForMember(dest => dest.Authors, opts => opts.MapFrom(
+                        src => string.Join(", ", src.Authors.Select(author => author.Name))))
+                    .ForMember(dest => dest.ImgUrl, opts => opts.MapFrom(
+                        src => src.Image.Url))
+                    .ForMember(dest => dest.TotalVoted, opts => opts.MapFrom(
+                        src => src.Rating.Count))
+                    .ForMember(dest => dest.FinalRating, opts => opts.MapFrom(
+                        src => src.Rating.Sum(r => r.Rate) / (double)src.Rating.Count()));
             });
         }
     }

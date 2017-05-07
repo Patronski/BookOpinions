@@ -3,12 +3,21 @@
     ViewBag.Title = "All";
 }
 
+<div class="panel row">
+    @if (string.IsNullOrEmpty(Model.Search))
+    {
+        <h2 class="col-lg-3">All</h2>
+    }
+    else
+    {
+        <div class="col-lg-3">
+            <h2>Searching for</h2>
+            <p>@Model.Search</p>
+        </div>
+    }
 
-<div class="">
-    <h2 class="col-lg-1">All</h2>
-    <br />
-    <label for="sortTypes" class="col-lg-1 control-label ">Sort by: </label>
-    <div id="sortTypes" class="col-lg-10">
+    <p class="control-label ">Sort by: </p>
+    <div id="sortTypes" class=" col-lg-9">
         <ul class="nav navbar-nav">
             <li> @Html.ActionLink("Title", "all", "book", routeValues: new { sortOrder = "title" }, htmlAttributes: null)</li>
             <li>@Html.ActionLink("Author", "All", "Book", routeValues: new { sortOrder = "author" }, htmlAttributes: null)</li>
@@ -20,27 +29,40 @@
                 </ul>
             </li>
         </ul>
+        <ul class="nav navbar-right col-lg-6">
+            <li>
+                Search by Title:
+            </li>
+            <li>
+                @using (Html.BeginForm("all", "book", FormMethod.Get))
+                {
+                    <div >
+                        @Html.ValidationSummary(true, "summaryMessage", new { @class = "text-danger" })
+                        <span class="form-inline">
+                            @Html.EditorFor(model => model.Search, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Search)
+                            <input type="submit" value="Search" class="btn btn-info" />
+                        </span>
+                    </div>
+                }
+            </li>
+        </ul>
     </div>
 </div>
-<hr />
-<hr />
-<hr />
 
-@if (TempData["AddedBook"] != null)
+@if (TempData["AddedBook"] != null || TempData["DeletedBook"] != null)
 {
     <div class="alert-success">
         @TempData["AddedBook"]
+    </div>
+    <div class="alert-success">
+        @TempData["DeletedBook"]
     </div>
 }
 
 @{
     int picsInRow = 6;
     int picsInPage = picsInRow * 3;
-    int pages = Model.Books.Count() / picsInPage;
-    if (Model.Books.Count() % picsInPage != 0)
-    {
-        pages += 1;
-    }
 }
 
 @for (int j = 0; j < (Model.Books.Count() / picsInRow + Model.Books.Count() % picsInRow); j++)
@@ -68,60 +90,26 @@
         {
             <li>
                 <a href="~/Book/All">First</a>
+                @Html.ActionLink("First", "all", "book", routeValues: new { sortOrder = Model.SortOrder, page = 1, search = Model.Search }, htmlAttributes: null)
             </li>
             <li>
-                @Html.ActionLink("Previous", "all", "book", routeValues: new { sortOrder = Model.SortOrder, page = (Model.Pager.CurrentPage - 1) }, htmlAttributes: null)
-                @*<a href="~/Book/All?page=@(Model.Pager.CurrentPage - 1)">Previous</a>*@
+                @Html.ActionLink("Previous", "all", "book", routeValues: new { sortOrder = Model.SortOrder, page = (Model.Pager.CurrentPage - 1), search = Model.Search }, htmlAttributes: null)
             </li>
         }
-
         @for (var page = Model.Pager.StartPage; page <= Model.Pager.EndPage; page++)
         {
             <li class="@(page == Model.Pager.CurrentPage ? "active" : "")">
-                @Html.ActionLink( @page.ToString(), "all", "book", routeValues: new { sortOrder = Model.SortOrder, page = page }, htmlAttributes: null)
-                @*<a href="~/Book/All?page=@page">@page</a>*@
-            </li>    }
-
+                @Html.ActionLink(@page.ToString(), "all", "book", routeValues: new { sortOrder = Model.SortOrder, page = page, search = Model.Search }, htmlAttributes: null)
+            </li>    
+        }
         @if (Model.Pager.CurrentPage < Model.Pager.TotalPages)
         {
             <li>
-                <a href="~/Book/All?page=@(Model.Pager.CurrentPage + 1)">Next</a>
+                @Html.ActionLink("Next", "all", "book", routeValues: new { sortOrder = Model.SortOrder, page = (Model.Pager.CurrentPage + 1), search = Model.Search }, htmlAttributes: null)
             </li>
-                            <li>
-                                <a href="~/Book/All?page=@(Model.Pager.TotalPages)">Last</a>
-                            </li>
+            <li>
+                @Html.ActionLink("Last", "all", "book", routeValues: new { sortOrder = Model.SortOrder, page = (Model.Pager.TotalPages), search = Model.Search }, htmlAttributes: null)
+            </li>
         }
     </ul>
 }
-
-@*<form action="/book/all/title">
-        <button class="btn btn-default">Title</button>
-    </form>
-    <form action="/book/all/">
-        <button class="btn btn-default">Date</button>
-    </form>*@
-
-@*<form class="form-horizontal" method="get">
-        <fieldset>
-            <legend>All</legend>
-            <div class="form-group">
-                <label for="select" class="col-lg-2 control-label">Selects</label>
-                <div class="col-lg-10">
-                    <select class="form-control" id="select">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                    </select>
-                    <br>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="col-lg-10 col-lg-offset-2">
-                    <button type="reset" class="btn btn-default">Cancel</button>
-                    <button type="submit" class="btn btn-primary">Go</button>
-                </div>
-            </div>
-        </fieldset>
-    </form>*@

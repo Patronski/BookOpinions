@@ -1,32 +1,63 @@
-﻿@model BookOpinions.Models.EntityModels.Book
+﻿@model BookOpinions.Models.ViewModels.Book.AboutBookViewModel
 @{
     ViewBag.Title = "About";
 }
+<section class="col-lg-6">
+    <h2>@Model.Title</h2>
 
-<h2>@Model.Title</h2>
+    <img class="img-responsive img-rounded" alt="picture of the book" src="@Model.ImgUrl" />
+    <div class="">
+        <p>Authors: @Model.Authors</p>
 
-<img class="img-responsive img-rounded" alt="picture of the book" src="@Model.Image.Url" />
-<div class="">
-    <p>Authors: </p>
-    @foreach (var author in Model.Authors)
-    {
-        @author.Name
-    }
+        <p>Final Rating: @Model.FinalRating Total votes: @Model.TotalVoted</p>
 
-    @foreach (var grade in Model.Rating)
-    {
-        @grade.Rate
-    }
+        @foreach (var opinion in Model.Opinions)
+        {
+            <p>By @opinion.User.Name: </p>
+            <p>Comment: @opinion.Comment </p>
+        }
 
-    @foreach (var opinion in Model.Opinions)
-    {
-        <p>By @opinion.User.Name </p>
-        <p>Comment: @opinion.Comment </p>
-    }
-
-    <div class="tr" style="background-color:#f1f1f1;">
-        <div class="td0">Please rate this school</div>
-        <div class="td">@Html.Partial("_VoteNow", Model.Id.ToString())</div>
-        <div class="td">@Html.Partial("_VoteShow", Model.Rating)</div>
+        <div class="tr" style="background-color:#f1f1f1;">
+            <div class="td0">Please rate this book</div>
+            <div class="td">@Html.Partial("_VoteNow", Model.Id.ToString())</div>
+            @*<div class="td">@Html.Partial("_VoteShow", Model.Rating)</div>*@
+        </div>
     </div>
-</div>
+    <br />
+    <div>
+        @Html.ActionLink("Back to All", "all")
+    </div>
+</section>
+@if (User.IsInRole("Admin"))
+{
+    <section class="col-lg-offset-2 col-lg-4">
+        <br />
+        @if (TempData["DeletedBook"] != null)
+        {
+            <div class="alert-danger">
+                @TempData["DeletedBook"]
+            </div>
+        }
+
+        <div id="adminBookDetails">
+            <h4 class="text-center">Danger zone - Admin</h4>
+            <div class="form-group">
+                @using (Html.BeginForm("delete", "book"))
+                {
+                    @Html.AntiForgeryToken();
+                    <input type="text" placeholder="Input &quot;delete&quot;" name="delete" class=" form-control" />
+                    <input type="hidden" value="@Model.Id" name="id" class=" form-control" />
+                    <input type="submit" value="Delete" class="btn btn-danger center-block" />
+                }
+            </div>
+            <br />
+            <div class="">
+                @using (Html.BeginForm("Edit", "book", FormMethod.Get))
+                {
+                    <input type="hidden" value="@Model.Id" name="id" class=" form-control" />
+                    <input type="submit" value="Edit" class="btn btn-info center-block" />
+                }
+            </div>
+        </div>
+    </section>
+}

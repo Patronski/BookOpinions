@@ -31,24 +31,25 @@ namespace BookOpinions.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         [Route("book/add")]
-        public ActionResult Add(AddBookBindingModel bm)
+        public ActionResult Add([Bind(Include = "Title,ImageUrl,AuthorName")]AddBookBindingModel bm)
         {
             if (ModelState.IsValid)
             {
                 this.CurrentUser = UserManager.FindById(this.User.Identity.GetUserId());
                 this.service.AddNewBook(bm, this.CurrentUser);
-                TempData["AddedBook"] = $"Successfully added book {bm.Title}";
+                TempData["AddedBook"] = $"Successfully added book {bm.Title}!";
 
                 return this.RedirectToAction("all", "book");
             }
-            return this.RedirectToAction("add");
+            return this.RedirectToAction("add", bm);
         }
 
-        [Route("book/all/{sortOrder?}/{page?}")]
-        public ActionResult All(string sortOrder, int? page)
+        [Route("book/all/{sortOrder?}/{page?}/{search?}")]
+        public ActionResult All(string sortOrder, int? page, string search)
         {
-            AllBooksViewModel vm = this.service.GetAllBooksBySortOrderForPage(sortOrder, page, (6 * 3));
+            AllBooksViewModel vm = this.service.GetAllBooksBySortOrderForPage(sortOrder, search, page, (6 * 3));
 
             return View(vm);
         }
@@ -56,11 +57,61 @@ namespace BookOpinions.Controllers
         [Route("book/{id}")]
         public ActionResult About(int id)
         {
-            Book vm = this.service.GetBookById(id);
+            AboutBookViewModel vm = this.service.GetAboutBookVmById(id);
 
             return View(vm);
         }
 
+        [HttpPost]
+        [Authorize(Roles ="Admin")]
+        [ValidateAntiForgeryToken]
+        [Route("book/delete")]
+        public ActionResult Delete(string delete, int id)
+        {
+            if (delete == "delete")
+            {
+                this.service.DeleteBook(id);
+                TempData["DeletedBook"] = $"Successfully deleted book with id = {id}";
+                return this.RedirectToAction("all", "book");
+            }
+            TempData["DeletedBook"] = $"Write lowercase \"delete\" without quotes to delete this book!";
+            return this.RedirectToAction("about", "book", routeValues: new {id = id});
+        }
+
+        [Route("book/edit")]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Edit(int id)
+        {
+            AddBookViewModel vm = this.service.GetAddBookVmById(id);
+
+            return View(vm);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
+        [Route("book/edit")]
+        public ActionResult Edit([Bind(Include = "Title,ImageUrl,AuthorName")]AddBookBindingModel bm)
+        {
+            if (ModelState.IsValid)
+            {
+                this.CurrentUser = UserManager.FindById(this.User.Identity.GetUserId());
+                this.service.AddNewBook(bm, this.CurrentUser);
+                TempData["AddedBook"] = $"Successfully edited book {bm.Title}!";
+
+                return this.RedirectToAction("all", "book");
+            }
+            return this.RedirectToAction("edit", bm);
+        }
+
+        /// <summary>
+        /// Rating
+        /// </summary>
+        /// <param name="vote"></param>
+        /// <param name="s"></param>
+        /// <param name="id"></param>
+        /// <param name="url"></param>
+        /// <returns></returns>
         [Route("book/SendRating/{vote}/{s}/{id}/{url}")]
         public JsonResult SendRating(string vote, string s, string id, string url)
         {

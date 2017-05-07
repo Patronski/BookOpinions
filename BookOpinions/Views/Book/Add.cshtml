@@ -1,4 +1,4 @@
-﻿@model BookOpinions.Models.BindingModels.Book.AddBookBindingModel
+﻿@model BookOpinions.Models.ViewModels.Book.AddBookViewModel
 
 @{
     ViewBag.Title = "Add";
@@ -18,21 +18,21 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2 col-xs-6" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control", placeholder = "Some Title" } })
                 @Html.ValidationMessageFor(model => model.Title, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.AuthorName, htmlAttributes: new { @class = "control-label col-md-2 col-xs-6" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.AuthorName, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.AuthorName, new { htmlAttributes = new { @class = "form-control", placeholder = "Иван Вазов,Пешо,Любен Каравелов" } })
                 @Html.ValidationMessageFor(model => model.AuthorName, "", new { @class = "text-danger" })
             </div>
         </div>
         <div class="form-group">
             @Html.LabelFor(model => model.ImageUrl, htmlAttributes: new { @class = "control-label col-md-2 col-xs-6" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.ImageUrl, new { htmlAttributes = new { @class = "form-control", placeholder = "https://site.com/image.png" } })
                 @Html.ValidationMessageFor(model => model.ImageUrl, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -45,7 +45,7 @@
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to All", "all")
 </div>
 
 @section Scripts {

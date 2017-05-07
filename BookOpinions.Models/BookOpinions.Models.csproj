@@ -108,6 +108,7 @@
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
     <Compile Include="ViewModels\Book\AboutBookViewModel.cs" />
+    <Compile Include="ViewModels\Book\AddBookViewModel.cs" />
     <Compile Include="ViewModels\Book\IndexViewModel.cs" />
     <Compile Include="ViewModels\Home\SimpleBookViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />

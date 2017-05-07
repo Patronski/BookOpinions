@@ -21,7 +21,7 @@ namespace BookOpinions.Services
                 .Split(',')
                 .Select(name => new Author
                 {
-                    Name = name,
+                    Name = name.Trim(),
                 })
                 .ToList();
 
@@ -41,76 +41,88 @@ namespace BookOpinions.Services
             this.Context.SaveChanges();
         }
 
-        public AllBooksViewModel GetAllBooksBySortOrderForPage(string sortOrder, int? page, int booksOnPage)
+        public AllBooksViewModel GetAllBooksBySortOrderForPage(string sortOrder, string search, int? page, int booksOnPage)
         {
-            IEnumerable<SimpleBookViewModel> books;
-
+            IEnumerable<SimpleBookViewModel> books = this.Context.Books
+                .Select(b => new SimpleBookViewModel
+                {
+                    Id = b.Id,
+                    ImgUrl = b.Image.Url,
+                    Title = b.Title,
+                    Author = b.Authors.FirstOrDefault() //Todo not only first author. All!
+                });
+            
             var sortToLower = sortOrder != null ? sortOrder.ToLower() : null;
-
             switch (sortToLower)
             {
                 case "author":
-                    books = this.Context.Books
-                        .Select(b => new SimpleBookViewModel
-                        {
-                            Id = b.Id,
-                            ImgUrl = b.Image.Url,
-                            Title = b.Title,
-                            Author = b.Authors.FirstOrDefault() //Todo
-                        })
-                        .OrderBy(sb => sb.Author.Name);
+                    books = books.OrderBy(sb => sb.Author != null ? sb.Author.Name : "Я");
                     break;
                 case "title":
-                    books = this.Context.Books
-                        .Select(b => new SimpleBookViewModel
-                        {
-                            Id = b.Id,
-                            ImgUrl = b.Image.Url,
-                            Title = b.Title,
-                            Author = b.Authors.FirstOrDefault()
-                        })
-                        .OrderBy(sb=> sb.Title);
+                    books = books.OrderBy(sb => sb.Title);
                     break;
                 case "newfirst":
-                    books = this.Context.Books
-                        .Select(b => new SimpleBookViewModel
-                        {
-                            Id = b.Id,
-                            ImgUrl = b.Image.Url,
-                            Title = b.Title,
-                            Author = b.Authors.FirstOrDefault()
-                        });
-                    books = books
-                        .Reverse();
+                    books = books.Reverse();
                     break;
                 default:
-                    books = this.Context.Books
-                        .Select(b => new SimpleBookViewModel
-                        {
-                            Id = b.Id,
-                            ImgUrl = b.Image.Url,
-                            Title = b.Title,
-                            Author = b.Authors.FirstOrDefault()
-                        });
                     break;
             }
 
-            var pager = new Pager(books.Count(), page, 6 * 3);
+            if (!string.IsNullOrEmpty(search))
+            {
+                var searchWords = search.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(w => w.ToLower());
+                books = books.Where(b =>
+                {
+                    var titleWords = b.Title.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries).Select(w=> w.ToLower());
+                    var rezult = false;
+                    foreach (var titleWord in titleWords)
+                    {
+                        if (searchWords.Any(sw=> titleWord.StartsWith(sw)))
+                        {
+                            rezult = true;
+                        }
+                    }
+                    return rezult;
+                });
+            }
+
+            Pager pager = new Pager(books.Count(), page, booksOnPage);
             var viewModel = new AllBooksViewModel
             {
                 Books = books
-                        .Skip((pager.CurrentPage - 1) * pager.ItemsOnPage)
-                        .Take(pager.ItemsOnPage),
+                        .Skip((pager.CurrentPage - 1) * booksOnPage)
+                        .Take(booksOnPage),
                 Pager = pager,
-                SortOrder = sortOrder
+                SortOrder = sortOrder,
+                Search = search
             };
 
             return viewModel;
         }
 
-        public Book GetBookById(int id)
+        public void DeleteBook(int id)
         {
-            return this.Context.Books.Find(id);
+            var book = this.Context.Books.Find(id);
+            this.Context.Books.Remove(book);
+            this.Context.SaveChanges();
+        }
+
+        public AboutBookViewModel GetAboutBookVmById(int id)
+        {
+            var book = this.Context.Books.Find(id);
+            AboutBookViewModel vm = Mapper.Map<AboutBookViewModel>(book);
+
+            return vm;
+        }
+
+        public AddBookViewModel GetAddBookVmById(int id)
+        {
+            Book book = this.Context.Books.Find(id);
+            AddBookViewModel vm = Mapper.Map<AddBookViewModel>(book);
+            var authorNames = book.Authors.Select(a => a.Name);
+            vm.AuthorName = string.Join(",", authorNames);
+
+            return vm;
         }
     }
 }

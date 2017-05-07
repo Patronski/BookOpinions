@@ -303,6 +303,7 @@
     <Content Include="Views\Book\About.cshtml" />
     <Content Include="Views\Shared\_VoteNow.cshtml" />
     <Content Include="Views\Shared\_VoteShow.cshtml" />
+    <Content Include="Views\Book\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

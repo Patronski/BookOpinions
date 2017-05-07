@@ -23,7 +23,9 @@ textarea {
     max-width: 280px;
 }
 
-.book-card {
-    height: 100px;
-    width: 50px;
+#adminBookDetails {
+    border:dashed 4px;
+    color:wheat;
+    margin-top:20%;
+    padding:20px
 }
