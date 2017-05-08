@@ -17,6 +17,8 @@
 
         public int Id { get; set; }
 
+        public string UserId { get; set; }
+
         public string ImgUrl { get; set; }
 
         public string Authors { get; set; }

@@ -40,6 +40,7 @@ namespace BookOpinions
                         src => src.Rating.Count))
                     .ForMember(dest => dest.FinalRating, opts => opts.MapFrom(
                         src => src.Rating.Sum(r => r.Rate) / (double)src.Rating.Count()));
+                e.CreateMap<CommentBindingModel, Opinion>();
             });
         }
     }

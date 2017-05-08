@@ -4,12 +4,15 @@
 }
 
 <section>
-    <div class="well col-md-12">
+    <div class="well col-md-12" id="homePopularBooks">
         <h2 class="media-heading">Popular Books</h2>
-        <p class="col-md-12 lead">Start from reading our most popular books or login to see our full collection and recommendations.</p>
-        
+        @if (!Request.IsAuthenticated)
+        {
+            <p class="col-md-12 lead">Start from reading our most popular books or login to see our full collection and recommendations.</p>
+        }
+
         @{int picsInRow = 6;
-          int rows = 2;}
+            int rows = 2;}
         @for (int i = 0; i < rows; i++)
         {
             <div class="row">
@@ -21,16 +24,18 @@
                             <img class="img-thumbnail" alt="picture of @book.Title" src="@book.ImgUrl" />
                         </a>
                         <p>
-                            @Html.ActionLink("Learn more", "About", "book", routeValues: new { id = @book.Id}, htmlAttributes: new {@class = "btn btn-default"})
+                            @Html.ActionLink("Learn more", "About", "book", routeValues: new { id = @book.Id }, htmlAttributes: new { @class = "btn btn-default" })
                         </p>
                     </div>
                 }
             </div>
         }
     </div>
-    <hr />
-    <p class="col-md-12">
-        Start from reading our most popular books or login to see our full collection and recommendations.
-        <a class="btn-link" href="/account/register">&raquo;Register here</a> or <a class="btn-link" href="/account/login">Log in&raquo;</a>
-    </p>
+    @if (!Request.IsAuthenticated)
+    {
+        <label class="col-md-12 well text-info" >
+            Start from reading our most popular books or login to see our full collection and recommendations.
+            <a class="btn-link" href="/account/register">&raquo;Register here</a> or <a class="btn-link" href="/account/login">Log in&raquo;</a>
+        </label>
+    }
 </section>

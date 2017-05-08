@@ -57,9 +57,32 @@ namespace BookOpinions.Controllers
         [Route("book/{id}")]
         public ActionResult About(int id)
         {
-            AboutBookViewModel vm = this.service.GetAboutBookVmById(id);
+            var userId = this.User.Identity.GetUserId();
+            AboutBookViewModel vm = this.service.GetAboutBookVmById(id, userId);
 
             return View(vm);
+        }
+
+        [HttpPost]
+        [Route("book/comment")]
+        public ActionResult Comment([Bind(Include ="Comment,BookId,UserId")] CommentBindingModel bm)
+        {
+            if (ModelState.IsValid)
+            {
+                this.service.AddComment(bm);
+                return RedirectToAction("about", routeValues: new { id = bm.BookId });
+            }
+            TempData["AddedComment"] = $"The comment is not created!";
+            return RedirectToAction("about", routeValues: new { id = bm.BookId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("book/deleteComment/{id}")]
+        public ActionResult DeleteComment(int commentId, int bookId)
+        {
+            this.service.DeleteComment(commentId);
+            return this.RedirectToAction("about", new { id = bookId });
         }
 
         [HttpPost]

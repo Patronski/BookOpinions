@@ -25,7 +25,20 @@ textarea {
 
 #adminBookDetails {
     border:dashed 4px;
-    color:wheat;
-    margin-top:20%;
+    color:coral;
     padding:20px
+}
+
+#homePopularBooks {
+    margin-top:20px;
+    padding: 20px;
+    border:groove;
+}
+
+.image-card {
+    /*max-height:260px*/
+}
+
+.my-image {
+    max-height:150px;
 }

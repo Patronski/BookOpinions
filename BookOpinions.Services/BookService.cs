@@ -49,7 +49,9 @@ namespace BookOpinions.Services
                     Id = b.Id,
                     ImgUrl = b.Image.Url,
                     Title = b.Title,
-                    Author = b.Authors.FirstOrDefault() //Todo not only first author. All!
+                    Author = b.Authors.FirstOrDefault(), //Todo not only first author. All!
+                    OpinionsCount = b.Opinions.Count,
+                    Rating = b.Rating.Sum(r => r.Rate / b.Rating.Count)
                 });
             
             var sortToLower = sortOrder != null ? sortOrder.ToLower() : null;
@@ -63,6 +65,12 @@ namespace BookOpinions.Services
                     break;
                 case "newfirst":
                     books = books.Reverse();
+                    break;
+                case "opinions":
+                    books = books.OrderBy(b=>b.OpinionsCount);
+                    break;
+                case "rating":
+                    books = books.OrderBy(b => b.Rating);
                     break;
                 default:
                     break;
@@ -100,6 +108,23 @@ namespace BookOpinions.Services
             return viewModel;
         }
 
+        public void DeleteComment(int commentId)
+        {
+            var opinion = this.Context.Opinions.Find(commentId);
+            this.Context.Opinions.Remove(opinion);
+            this.Context.SaveChanges();
+        }
+
+        public void AddComment(CommentBindingModel bm)
+        {
+            Opinion opinion = Mapper.Map<Opinion>(bm);
+            opinion.Book = this.Context.Books.Find(bm.BookId);
+            opinion.User = this.Context.Users.Find(bm.UserId);
+            opinion.CreatedOn = DateTime.Now;
+            this.Context.Opinions.Add(opinion);
+            this.Context.SaveChanges();
+        }
+
         public void DeleteBook(int id)
         {
             var book = this.Context.Books.Find(id);
@@ -107,10 +132,11 @@ namespace BookOpinions.Services
             this.Context.SaveChanges();
         }
 
-        public AboutBookViewModel GetAboutBookVmById(int id)
+        public AboutBookViewModel GetAboutBookVmById(int id, string userId)
         {
             var book = this.Context.Books.Find(id);
             AboutBookViewModel vm = Mapper.Map<AboutBookViewModel>(book);
+            vm.UserId = userId;
 
             return vm;
         }

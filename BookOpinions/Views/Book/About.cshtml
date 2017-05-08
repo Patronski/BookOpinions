@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "About";
 }
-<section class="col-lg-6">
+<section class="col-lg-3">
     <h2>@Model.Title</h2>
 
     <img class="img-responsive img-rounded" alt="picture of the book" src="@Model.ImgUrl" />
@@ -11,14 +11,8 @@
 
         <p>Final Rating: @Model.FinalRating Total votes: @Model.TotalVoted</p>
 
-        @foreach (var opinion in Model.Opinions)
-        {
-            <p>By @opinion.User.Name: </p>
-            <p>Comment: @opinion.Comment </p>
-        }
-
         <div class="tr" style="background-color:#f1f1f1;">
-            <div class="td0">Please rate this book</div>
+            <div class="td">Please rate this book</div>
             <div class="td">@Html.Partial("_VoteNow", Model.Id.ToString())</div>
             @*<div class="td">@Html.Partial("_VoteShow", Model.Rating)</div>*@
         </div>
@@ -28,10 +22,11 @@
         @Html.ActionLink("Back to All", "all")
     </div>
 </section>
+
 @if (User.IsInRole("Admin"))
 {
-    <section class="col-lg-offset-2 col-lg-4">
-        <br />
+    <br />
+    <section class="col-lg-offset-2 col-lg-7">
         @if (TempData["DeletedBook"] != null)
         {
             <div class="alert-danger">
@@ -45,7 +40,7 @@
                 @using (Html.BeginForm("delete", "book"))
                 {
                     @Html.AntiForgeryToken();
-                    <input type="text" placeholder="Input &quot;delete&quot;" name="delete" class=" form-control" />
+                    <input type="text" placeholder="Input &quot;delete&quot;" name="delete" class="center-block form-control" />
                     <input type="hidden" value="@Model.Id" name="id" class=" form-control" />
                     <input type="submit" value="Delete" class="btn btn-danger center-block" />
                 }
@@ -61,3 +56,41 @@
         </div>
     </section>
 }
+<section class="col-lg-offset-4">
+    <br />
+    @Html.ActionLink("Back to All", "all")
+    <br />
+    @if (TempData["AddedComment"] != null)
+    {
+        <div class="alert-success">
+            @TempData["AddedComment"]
+        </div>
+    }
+    <h4 class="text-primary">Comments(@Model.Opinions.Count)</h4>
+    @foreach (var comment in Model.Opinions)
+    {
+        <div class="">
+            <label for="thisComment" class="text-info">On: @comment.CreatedOn.ToString("yyyy/MM/dd HH:mm")</label>
+            @if (Model.UserId == comment.User.Id)
+            {
+                <div style="width:60px; float:right">
+                    @using (Html.BeginForm("deleteComment", "book"))
+                    {
+                        @Html.AntiForgeryToken();
+                        <input type="hidden" value="@comment.Id" name="commentId"/>
+                        <input type="hidden" value="@Model.Id" name="bookId"/>
+                        <input type="submit" value="Delete" class="btn btn-sm btn-danger" />
+                    }
+                </div>
+            }
+            <p id="thisComment" class="well">@comment.Comment</p>
+        </div>
+    }
+    @using (Html.BeginForm("Comment", "book"))
+    {
+        <textarea rows="5" cols="50" name="comment"></textarea>
+        <input type="hidden" value="@Model.Id" name="bookId" class=" form-control" />
+        <input type="hidden" value="@Model.UserId" name="userId" class=" form-control" />
+        <input type="submit" value=":=)" class="btn btn-info left" />
+    }
+</section>
