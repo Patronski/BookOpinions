@@ -70,27 +70,30 @@
     @foreach (var comment in Model.Opinions)
     {
         <div class="">
-            <label for="thisComment" class="text-info">On: @comment.CreatedOn.ToString("yyyy/MM/dd HH:mm")</label>
-            @if (Model.UserId == comment.User.Id)
+            <label class="text-info">On: @comment.CreatedOn.ToString("yyyy/MM/dd HH:mm")</label>
+            @if (Model.UserId == comment.User.Id || User.IsInRole("Admin"))
             {
-                <div style="width:60px; float:right">
-                    @using (Html.BeginForm("deleteComment", "book"))
+                <span style="width:60px; float:right">
+                    @using (Html.BeginForm("deleteComment", "book", FormMethod.Post, new {@class= "form-horizontal" }))
                     {
                         @Html.AntiForgeryToken();
-                        <input type="hidden" value="@comment.Id" name="commentId"/>
-                        <input type="hidden" value="@Model.Id" name="bookId"/>
+                        <input type="hidden" value="@comment.Id" name="commentId" />
+                        <input type="hidden" value="@Model.Id" name="bookId" />
                         <input type="submit" value="Delete" class="btn btn-sm btn-danger" />
                     }
-                </div>
+                </span>
             }
             <p id="thisComment" class="well">@comment.Comment</p>
         </div>
     }
-    @using (Html.BeginForm("Comment", "book"))
+    @if (Request.IsAuthenticated)
     {
-        <textarea rows="5" cols="50" name="comment"></textarea>
-        <input type="hidden" value="@Model.Id" name="bookId" class=" form-control" />
-        <input type="hidden" value="@Model.UserId" name="userId" class=" form-control" />
-        <input type="submit" value=":=)" class="btn btn-info left" />
+        using (Html.BeginForm("Comment", "book"))
+        {
+            <textarea rows="5" cols="50" name="comment"></textarea>
+            <input type="hidden" value="@Model.Id" name="bookId" class=" form-control" />
+            <input type="hidden" value="@Model.UserId" name="userId" class=" form-control" />
+            <input type="submit" value=":=)" class="btn btn-info left" />
+        }
     }
 </section>

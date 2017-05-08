@@ -14,7 +14,6 @@ using System.Web.Mvc;
 
 namespace BookOpinions.Controllers
 {
-    [Authorize(Roles = "User, Admin")]
     public class BookController : BaseController
     {
         private BookService service;
@@ -25,6 +24,7 @@ namespace BookOpinions.Controllers
         }
         
         [Route("book/add")]
+        [Authorize(Roles = "User, Admin")]
         public ActionResult Add()
         {
             return View();
@@ -33,6 +33,7 @@ namespace BookOpinions.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("book/add")]
+        [Authorize(Roles = "User, Admin")]
         public ActionResult Add([Bind(Include = "Title,ImageUrl,AuthorName")]AddBookBindingModel bm)
         {
             if (ModelState.IsValid)
@@ -47,6 +48,7 @@ namespace BookOpinions.Controllers
         }
 
         [Route("book/all/{sortOrder?}/{page?}/{search?}")]
+        [Authorize(Roles = "User, Admin")]
         public ActionResult All(string sortOrder, int? page, string search)
         {
             AllBooksViewModel vm = this.service.GetAllBooksBySortOrderForPage(sortOrder, search, page, (6 * 3));
@@ -65,6 +67,7 @@ namespace BookOpinions.Controllers
 
         [HttpPost]
         [Route("book/comment")]
+        [Authorize(Roles = "User, Admin")]
         public ActionResult Comment([Bind(Include ="Comment,BookId,UserId")] CommentBindingModel bm)
         {
             if (ModelState.IsValid)
@@ -79,6 +82,7 @@ namespace BookOpinions.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("book/deleteComment/{id}")]
+        [Authorize(Roles = "User, Admin")]
         public ActionResult DeleteComment(int commentId, int bookId)
         {
             this.service.DeleteComment(commentId);
@@ -89,6 +93,7 @@ namespace BookOpinions.Controllers
         [Authorize(Roles ="Admin")]
         [ValidateAntiForgeryToken]
         [Route("book/delete")]
+        [Authorize(Roles = "User, Admin")]
         public ActionResult Delete(string delete, int id)
         {
             if (delete == "delete")
@@ -103,6 +108,7 @@ namespace BookOpinions.Controllers
 
         [Route("book/edit")]
         [Authorize(Roles = "Admin")]
+        [Authorize(Roles = "User, Admin")]
         public ActionResult Edit(int id)
         {
             AddBookViewModel vm = this.service.GetAddBookVmById(id);
@@ -111,9 +117,9 @@ namespace BookOpinions.Controllers
         }
 
         [HttpPost]
-        [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
         [Route("book/edit")]
+        [Authorize(Roles = "Admin")]
         public ActionResult Edit([Bind(Include = "Title,ImageUrl,AuthorName")]AddBookBindingModel bm)
         {
             if (ModelState.IsValid)

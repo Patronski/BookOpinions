@@ -6,7 +6,11 @@
 <section>
     <div class="well col-md-12" id="homePopularBooks">
         <h2 class="media-heading">Popular Books</h2>
-        @if (!Request.IsAuthenticated)
+        @if (Request.IsAuthenticated)
+        {
+            <p class="col-md-12 lead">Start from reading our most popular books.</p>
+        }
+        else
         {
             <p class="col-md-12 lead">Start from reading our most popular books or login to see our full collection and recommendations.</p>
         }
@@ -34,7 +38,7 @@
     @if (!Request.IsAuthenticated)
     {
         <label class="col-md-12 well text-info" >
-            Start from reading our most popular books or login to see our full collection and recommendations.
+            Login to see our full collection and recommendations.
             <a class="btn-link" href="/account/register">&raquo;Register here</a> or <a class="btn-link" href="/account/login">Log in&raquo;</a>
         </label>
     }
