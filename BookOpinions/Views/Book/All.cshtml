@@ -91,7 +91,6 @@
         @if (Model.Pager.CurrentPage > 1)
         {
             <li>
-                <a href="~/Book/All">First</a>
                 @Html.ActionLink("First", "all", "book", routeValues: new { sortOrder = Model.SortOrder, page = 1, search = Model.Search }, htmlAttributes: null)
             </li>
             <li>

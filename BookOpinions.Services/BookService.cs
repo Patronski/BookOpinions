@@ -51,7 +51,7 @@ namespace BookOpinions.Services
                     Title = b.Title,
                     Author = b.Authors.FirstOrDefault(), //Todo not only first author. All!
                     OpinionsCount = b.Opinions.Count,
-                    Rating = b.Rating.Sum(r => r.Rate / b.Rating.Count)
+                    Rating = b.Rating.Sum(r => r.Rate / b.Rating.Count) == null ? 0 : b.Rating.Sum(r => r.Rate / b.Rating.Count)
                 });
             
             var sortToLower = sortOrder != null ? sortOrder.ToLower() : null;
