@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Web.Mvc;
+﻿using BookOpinions.Controllers;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using BookOpinions;
-using BookOpinions.Controllers;
+using System.Web.Mvc;
 using TestStack.FluentMVCTesting;
 
 namespace BookOpinions.Tests.Controllers

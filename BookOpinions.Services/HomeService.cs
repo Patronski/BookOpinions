@@ -1,13 +1,11 @@
 ﻿namespace BookOpinions.Services
 {
-    using System;
+    using BookOpinions.Models.ViewModels.Home;
+    using BookOpinions.Services.Contracts;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using BookOpinions.Models.ViewModels.Home;
 
-    public class HomeService : Service
+    public class HomeService : Service, IHomeService
     {
         public IEnumerable<SimpleBookViewModel> GetPopularBooks()
         {

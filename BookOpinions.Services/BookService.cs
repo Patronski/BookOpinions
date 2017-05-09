@@ -1,18 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using BookOpinions.Models.BindingModels.Book;
 using BookOpinions.Models.EntityModels;
-using BookOpinions.Models.ViewModels.Home;
 using BookOpinions.Models.FunctionalityModels;
 using BookOpinions.Models.ViewModels.Book;
+using BookOpinions.Models.ViewModels.Home;
+using BookOpinions.Services.Contracts;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace BookOpinions.Services
 {
-    public class BookService : Service
+    public class BookService : Service, IBooksService
     {
         public void AddNewBook(AddBookBindingModel bm, ApplicationUser currentUser)
         {
@@ -67,10 +66,10 @@ namespace BookOpinions.Services
                     books = books.Reverse();
                     break;
                 case "opinions":
-                    books = books.OrderBy(b=>b.OpinionsCount);
+                    books = books.OrderByDescending(b=>b.OpinionsCount);
                     break;
                 case "rating":
-                    books = books.OrderBy(b => b.Rating);
+                    books = books.OrderByDescending(b => b.Rating);
                     break;
                 default:
                     break;

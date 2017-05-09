@@ -1,12 +1,9 @@
 ﻿using BookOpinions.Models.BindingModels.Book;
 using BookOpinions.Models.EntityModels;
-using BookOpinions.Models.FunctionalityModels;
 using BookOpinions.Models.ViewModels.Book;
-using BookOpinions.Models.ViewModels.Home;
 using BookOpinions.Services;
 using Microsoft.AspNet.Identity;
 using System;
-using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Web;
@@ -22,29 +19,13 @@ namespace BookOpinions.Controllers
         {
             this.service = new BookService();
         }
-        
+
+        #region Get
         [Route("book/add")]
         [Authorize(Roles = "User, Admin")]
         public ActionResult Add()
         {
             return View();
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Route("book/add")]
-        [Authorize(Roles = "User, Admin")]
-        public ActionResult Add([Bind(Include = "Title,ImageUrl,AuthorName")]AddBookBindingModel bm)
-        {
-            if (ModelState.IsValid)
-            {
-                this.CurrentUser = UserManager.FindById(this.User.Identity.GetUserId());
-                this.service.AddNewBook(bm, this.CurrentUser);
-                TempData["AddedBook"] = $"Successfully added book {bm.Title}!";
-
-                return this.RedirectToAction("all", "book");
-            }
-            return this.RedirectToAction("add", bm);
         }
 
         [Route("book/all/{sortOrder?}/{page?}/{search?}")]
@@ -65,47 +46,6 @@ namespace BookOpinions.Controllers
             return View(vm);
         }
 
-        [HttpPost]
-        [Route("book/comment")]
-        [Authorize(Roles = "User, Admin")]
-        public ActionResult Comment([Bind(Include ="Comment,BookId,UserId")] CommentBindingModel bm)
-        {
-            if (ModelState.IsValid)
-            {
-                this.service.AddComment(bm);
-                return RedirectToAction("about", routeValues: new { id = bm.BookId });
-            }
-            TempData["AddedComment"] = $"The comment is not created!";
-            return RedirectToAction("about", routeValues: new { id = bm.BookId });
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Route("book/deleteComment/{id}")]
-        [Authorize(Roles = "User, Admin")]
-        public ActionResult DeleteComment(int commentId, int bookId)
-        {
-            this.service.DeleteComment(commentId);
-            return this.RedirectToAction("about", new { id = bookId });
-        }
-
-        [HttpPost]
-        [Authorize(Roles ="Admin")]
-        [ValidateAntiForgeryToken]
-        [Route("book/delete")]
-        [Authorize(Roles = "User, Admin")]
-        public ActionResult Delete(string delete, int id)
-        {
-            if (delete == "delete")
-            {
-                this.service.DeleteBook(id);
-                TempData["DeletedBook"] = $"Successfully deleted book with id = {id}";
-                return this.RedirectToAction("all", "book");
-            }
-            TempData["DeletedBook"] = $"Write lowercase \"delete\" without quotes to delete this book!";
-            return this.RedirectToAction("about", "book", routeValues: new {id = id});
-        }
-
         [Route("book/edit")]
         [Authorize(Roles = "Admin")]
         [Authorize(Roles = "User, Admin")]
@@ -114,23 +54,6 @@ namespace BookOpinions.Controllers
             AddBookViewModel vm = this.service.GetAddBookVmById(id);
 
             return View(vm);
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        [Route("book/edit")]
-        [Authorize(Roles = "Admin")]
-        public ActionResult Edit([Bind(Include = "Title,ImageUrl,AuthorName")]AddBookBindingModel bm)
-        {
-            if (ModelState.IsValid)
-            {
-                this.CurrentUser = UserManager.FindById(this.User.Identity.GetUserId());
-                this.service.AddNewBook(bm, this.CurrentUser);
-                TempData["AddedBook"] = $"Successfully edited book {bm.Title}!";
-
-                return this.RedirectToAction("all", "book");
-            }
-            return this.RedirectToAction("edit", bm);
         }
 
         /// <summary>
@@ -178,7 +101,7 @@ namespace BookOpinions.Controllers
             var book = context.Books.FirstOrDefault(b => b.Id == autoId);
             if (book != null)
             {
-                object obj = book.Rating.FirstOrDefault(rating=> rating.User == CurrentUser);
+                object obj = book.Rating.FirstOrDefault(rating => rating.User == CurrentUser);
 
                 string updatedVotes = string.Empty;
                 string[] votes = null;
@@ -233,5 +156,83 @@ namespace BookOpinions.Controllers
 
             return Json("<br />You rated " + thisVote + " star(s), thanks !");
         }
+        #endregion
+
+        #region Post
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("book/add")]
+        [Authorize(Roles = "User, Admin")]
+        public ActionResult Add([Bind(Include = "Title,ImageUrl,AuthorName")]AddBookBindingModel bm)
+        {
+            if (ModelState.IsValid)
+            {
+                this.CurrentUser = UserManager.FindById(this.User.Identity.GetUserId());
+                this.service.AddNewBook(bm, this.CurrentUser);
+                TempData["AddedBook"] = $"Successfully added book {bm.Title}!";
+
+                return this.RedirectToAction("all", "book");
+            }
+            return this.RedirectToAction("add", bm);
+        }
+
+        [HttpPost]
+        [Route("book/comment")]
+        [Authorize(Roles = "User, Admin")]
+        public ActionResult Comment([Bind(Include = "Comment,BookId,UserId")] CommentBindingModel bm)
+        {
+            if (ModelState.IsValid)
+            {
+                this.service.AddComment(bm);
+                return RedirectToAction("about", routeValues: new { id = bm.BookId });
+            }
+            TempData["AddedComment"] = $"The comment is not created!";
+            return RedirectToAction("about", routeValues: new { id = bm.BookId });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("book/deleteComment/{id}")]
+        [Authorize(Roles = "User, Admin")]
+        public ActionResult DeleteComment(int commentId, int bookId)
+        {
+            this.service.DeleteComment(commentId);
+            return this.RedirectToAction("about", new { id = bookId });
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "Admin")]
+        [ValidateAntiForgeryToken]
+        [Route("book/delete")]
+        [Authorize(Roles = "User, Admin")]
+        public ActionResult Delete(string delete, int id)
+        {
+            if (delete == "delete")
+            {
+                this.service.DeleteBook(id);
+                TempData["DeletedBook"] = $"Successfully deleted book with id = {id}";
+                return this.RedirectToAction("all", "book");
+            }
+            TempData["DeletedBook"] = $"Write lowercase \"delete\" without quotes to delete this book!";
+            return this.RedirectToAction("about", "book", routeValues: new { id = id });
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        [Route("book/edit")]
+        [Authorize(Roles = "Admin")]
+        public ActionResult Edit([Bind(Include = "Title,ImageUrl,AuthorName")]AddBookBindingModel bm)
+        {
+            if (ModelState.IsValid)
+            {
+                this.CurrentUser = UserManager.FindById(this.User.Identity.GetUserId());
+                this.service.AddNewBook(bm, this.CurrentUser);
+                TempData["AddedBook"] = $"Successfully edited book {bm.Title}!";
+
+                return this.RedirectToAction("all", "book");
+            }
+            return this.RedirectToAction("edit", bm);
+        }
+        #endregion
     }
 }

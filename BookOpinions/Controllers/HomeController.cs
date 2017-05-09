@@ -1,13 +1,9 @@
-﻿using BookOpinions.Models.Attributes;
-using BookOpinions.Models.ViewModels.Home;
+﻿using BookOpinions.Models.ViewModels.Home;
 using BookOpinions.Services;
-using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using System.Web.Security;
 
 namespace BookOpinions.Controllers
 {

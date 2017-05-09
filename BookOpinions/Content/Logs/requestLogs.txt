@@ -12526,3 +12526,597 @@ Request outgoing time: 9.5.2017 г. 01:05:15 ч.
 Request handle timespan: 00:00:00.0040015
 Request URL: http://localhost:59810/__browserLink/requestData/cb57be0006f6424784e0953365549e03?version=2
 ----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:10 ч.
+Request outgoing time: 9.5.2017 г. 21:30:15 ч.
+Request handle timespan: 00:00:04.1927267
+Request URL: http://localhost:59810/
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:15 ч.
+Request outgoing time: 9.5.2017 г. 21:30:15 ч.
+Request handle timespan: 00:00:00.0010007
+Request URL: http://localhost:59810/Content/site.css
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:15 ч.
+Request outgoing time: 9.5.2017 г. 21:30:15 ч.
+Request handle timespan: 00:00:00.0010019
+Request URL: http://localhost:59810/Content/images/book-xxl.png
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:18 ч.
+Request outgoing time: 9.5.2017 г. 21:30:18 ч.
+Request handle timespan: 00:00:00.0625047
+Request URL: http://localhost:59810/__browserLink/requestData/8cbbd0a727494c78b72088c09f14c604?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:21 ч.
+Request outgoing time: 9.5.2017 г. 21:30:21 ч.
+Request handle timespan: 00:00:00.0050013
+Request URL: http://localhost:59810/
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:21 ч.
+Request outgoing time: 9.5.2017 г. 21:30:21 ч.
+Request handle timespan: 00:00:00.0300117
+Request URL: http://localhost:59810/Content/bootstrap.css
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:22 ч.
+Request outgoing time: 9.5.2017 г. 21:30:22 ч.
+Request handle timespan: 00:00:00
+Request URL: http://localhost:59810/favicon.ico
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:22 ч.
+Request outgoing time: 9.5.2017 г. 21:30:22 ч.
+Request handle timespan: 00:00:00.0040013
+Request URL: http://localhost:59810/__browserLink/requestData/b97484f5f90044dcbe09ee1832892e28?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:29 ч.
+Request outgoing time: 9.5.2017 г. 21:30:33 ч.
+Request handle timespan: 00:00:03.8635035
+Request URL: http://localhost:59810/book/8
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:33 ч.
+Request outgoing time: 9.5.2017 г. 21:30:33 ч.
+Request handle timespan: 00:00:00.0030002
+Request URL: http://localhost:59810/__browserLink/requestData/657f087fc0ec4fb7bd6cfaed8eccc42d?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:41 ч.
+Request outgoing time: 9.5.2017 г. 21:30:42 ч.
+Request handle timespan: 00:00:00.7280900
+Request URL: http://localhost:59810/Account/Login?ReturnUrl=/book/8
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:42 ч.
+Request outgoing time: 9.5.2017 г. 21:30:42 ч.
+Request handle timespan: 00:00:00.0040012
+Request URL: http://localhost:59810/__browserLink/requestData/16fba04b776447aabc3ebbdc6dcc4497?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:44 ч.
+Request outgoing time: 9.5.2017 г. 21:30:44 ч.
+Request handle timespan: 00:00:00.0070021
+Request URL: http://localhost:59810/Account/ExternalLogin?ReturnUrl=%2Fbook%2F8
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:44 ч.
+Request outgoing time: 9.5.2017 г. 21:30:45 ч.
+Request handle timespan: 00:00:00.5350309
+Request URL: http://localhost:59810/signin-facebook?code=AQC2GhrxoJOJn6hYwU0IkzZS3W3Tv7z56fl5VZXjSg8P7xmg7Fot24_EIRvhp_OR-iBfB1bkjwPJ0mKSMZGNiN7xr35qOOuR8x2ho4WAJt8FqSaU6Rx-vh6vFfgD0m3nhPlV9oAk55EM2n8_y8g41GeOPyhzi5RNBkzvyE2gjX2busKU62hvQEfQmEvO2qzc7aAyvQh55IKBGylSzcqgjsZXK1x3ZATf6yR0RUivCvCyhenIjhxMevyX4Sq1XHKAnWwsOcy2tT_qU6nfVKOvQj9u5GNs-uUNhFT1s3CU3j2dPV0CaRYtsbidkUuuO9Smri-embsPdCwnSiftEP-tAtJQ&state=IWl7L1DZjROLWUuM-BpvOGbd0Nob_0N0eeLUrZkcZiJjtID42uwwdCElf7HJlkwY6UJE_gkG5usmqnayvTEHZ7FFtZU89B_RoZBlUcNLi-8YprjN3ys1bAVmuQluoM4oygnCMzQiREK8b-XQGM_9hU1YJpi9RO_YdaHs5aEpIZUkrk8Y1nI7Lhq-Em36rx5QsNt7jo2ipTy3eWLl-Y4nE6yK6CP5v3wBIhcR56iVGUo0Al9ZrF8CTReqa20cfXhP7056JExEUe7xiFzQHJMf5g
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:45 ч.
+Request outgoing time: 9.5.2017 г. 21:30:45 ч.
+Request handle timespan: 00:00:00.2615609
+Request URL: http://localhost:59810/Account/ExternalLoginCallback?ReturnUrl=%2Fbook%2F8
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:45 ч.
+Request outgoing time: 9.5.2017 г. 21:30:45 ч.
+Request handle timespan: 00:00:00.0160435
+Request URL: http://localhost:59810/book/8
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:45 ч.
+Request outgoing time: 9.5.2017 г. 21:30:45 ч.
+Request handle timespan: 00:00:00
+Request URL: http://localhost:59810/Content/images/white-star-icon.png
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:30:45 ч.
+Request outgoing time: 9.5.2017 г. 21:30:45 ч.
+Request handle timespan: 00:00:00.0030009
+Request URL: http://localhost:59810/__browserLink/requestData/da1b8fb2ee9444e8968cefa99578640b?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:31:10 ч.
+Request outgoing time: 9.5.2017 г. 21:31:10 ч.
+Request handle timespan: 00:00:00.0845965
+Request URL: http://localhost:59810/book/comment
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:31:10 ч.
+Request outgoing time: 9.5.2017 г. 21:31:10 ч.
+Request handle timespan: 00:00:00.0110036
+Request URL: http://localhost:59810/book/comment
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:31:10 ч.
+Request outgoing time: 9.5.2017 г. 21:31:10 ч.
+Request handle timespan: 00:00:00.0160062
+Request URL: http://localhost:59810/book/8
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:31:10 ч.
+Request outgoing time: 9.5.2017 г. 21:31:10 ч.
+Request handle timespan: 00:00:00.0040031
+Request URL: http://localhost:59810/__browserLink/requestData/803f6fa563604908a759e871e13bbc45?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:31:14 ч.
+Request outgoing time: 9.5.2017 г. 21:31:14 ч.
+Request handle timespan: 00:00:00.0100312
+Request URL: http://localhost:59810/book/deleteComment/8
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:31:14 ч.
+Request outgoing time: 9.5.2017 г. 21:31:14 ч.
+Request handle timespan: 00:00:00.0080022
+Request URL: http://localhost:59810/book/8
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:31:15 ч.
+Request outgoing time: 9.5.2017 г. 21:31:15 ч.
+Request handle timespan: 00:00:00.0040013
+Request URL: http://localhost:59810/__browserLink/requestData/f3945540684f4d80abbe536791e2117d?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:33 ч.
+Request outgoing time: 9.5.2017 г. 21:33:38 ч.
+Request handle timespan: 00:00:04.4992194
+Request URL: http://localhost:59810/
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:38 ч.
+Request outgoing time: 9.5.2017 г. 21:33:38 ч.
+Request handle timespan: 00:00:00.0247298
+Request URL: http://localhost:59810/__browserLink/requestData/54b6c67dd77441f586991fdd4b711598?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:45 ч.
+Request outgoing time: 9.5.2017 г. 21:33:45 ч.
+Request handle timespan: 00:00:00.5477473
+Request URL: http://localhost:59810/book/all
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:45 ч.
+Request outgoing time: 9.5.2017 г. 21:33:46 ч.
+Request handle timespan: 00:00:00.0050004
+Request URL: http://localhost:59810/__browserLink/requestData/0be41fcc69b548e29d4159a6bc2d9849?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:47 ч.
+Request outgoing time: 9.5.2017 г. 21:33:47 ч.
+Request handle timespan: 00:00:00.0179650
+Request URL: http://localhost:59810/book/all/opinions
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:48 ч.
+Request outgoing time: 9.5.2017 г. 21:33:48 ч.
+Request handle timespan: 00:00:00.0050026
+Request URL: http://localhost:59810/__browserLink/requestData/fced19841d744199a8819d6c05e135ea?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:52 ч.
+Request outgoing time: 9.5.2017 г. 21:33:52 ч.
+Request handle timespan: 00:00:00.2544184
+Request URL: http://localhost:59810/book/8
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:53 ч.
+Request outgoing time: 9.5.2017 г. 21:33:53 ч.
+Request handle timespan: 00:00:00.0040019
+Request URL: http://localhost:59810/__browserLink/requestData/1bb0c5cd0522440aba46492ed01da13c?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:55 ч.
+Request outgoing time: 9.5.2017 г. 21:33:55 ч.
+Request handle timespan: 00:00:00.0080044
+Request URL: http://localhost:59810/book/6
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:55 ч.
+Request outgoing time: 9.5.2017 г. 21:33:55 ч.
+Request handle timespan: 00:00:00.0030009
+Request URL: http://localhost:59810/__browserLink/requestData/9257e28e3b97491e8eff07aa52af503f?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:58 ч.
+Request outgoing time: 9.5.2017 г. 21:33:58 ч.
+Request handle timespan: 00:00:00.0078191
+Request URL: http://localhost:59810/book/14
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:58 ч.
+Request outgoing time: 9.5.2017 г. 21:33:58 ч.
+Request handle timespan: 00:00:00.0030009
+Request URL: http://localhost:59810/__browserLink/requestData/c869f4f1e0c64789a372839add86606a?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:59 ч.
+Request outgoing time: 9.5.2017 г. 21:33:59 ч.
+Request handle timespan: 00:00:00.2084571
+Request URL: http://localhost:59810/book/comment
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:33:59 ч.
+Request outgoing time: 9.5.2017 г. 21:33:59 ч.
+Request handle timespan: 00:00:00.0080024
+Request URL: http://localhost:59810/book/14
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:00 ч.
+Request outgoing time: 9.5.2017 г. 21:34:00 ч.
+Request handle timespan: 00:00:00.0040006
+Request URL: http://localhost:59810/__browserLink/requestData/7066a32aed7140f29bbd479592c97467?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:01 ч.
+Request outgoing time: 9.5.2017 г. 21:34:01 ч.
+Request handle timespan: 00:00:00.0060023
+Request URL: http://localhost:59810/book/comment
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:01 ч.
+Request outgoing time: 9.5.2017 г. 21:34:01 ч.
+Request handle timespan: 00:00:00.0080128
+Request URL: http://localhost:59810/book/14
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:01 ч.
+Request outgoing time: 9.5.2017 г. 21:34:01 ч.
+Request handle timespan: 00:00:00.0040019
+Request URL: http://localhost:59810/__browserLink/requestData/c440d85d4b574aed9a1027b1545f6200?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:05 ч.
+Request outgoing time: 9.5.2017 г. 21:34:05 ч.
+Request handle timespan: 00:00:00.0148194
+Request URL: http://localhost:59810/book/all
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:05 ч.
+Request outgoing time: 9.5.2017 г. 21:34:05 ч.
+Request handle timespan: 00:00:00.0156232
+Request URL: http://localhost:59810/__browserLink/requestData/513d171a30864b0b8370be0e7d50b9cf?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:07 ч.
+Request outgoing time: 9.5.2017 г. 21:34:07 ч.
+Request handle timespan: 00:00:00.0148763
+Request URL: http://localhost:59810/book/all/opinions
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:07 ч.
+Request outgoing time: 9.5.2017 г. 21:34:07 ч.
+Request handle timespan: 00:00:00.0060020
+Request URL: http://localhost:59810/__browserLink/requestData/e6d8aa78fdfe4f47a800ab2fb481706d?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:08 ч.
+Request outgoing time: 9.5.2017 г. 21:34:08 ч.
+Request handle timespan: 00:00:00.0080031
+Request URL: http://localhost:59810/book/8
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:08 ч.
+Request outgoing time: 9.5.2017 г. 21:34:08 ч.
+Request handle timespan: 00:00:00.0030006
+Request URL: http://localhost:59810/__browserLink/requestData/ab2ffaf018e641118a6ad440d6b08437?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:10 ч.
+Request outgoing time: 9.5.2017 г. 21:34:10 ч.
+Request handle timespan: 00:00:00.0090035
+Request URL: http://localhost:59810/book/14
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:10 ч.
+Request outgoing time: 9.5.2017 г. 21:34:10 ч.
+Request handle timespan: 00:00:00.0049954
+Request URL: http://localhost:59810/__browserLink/requestData/edba5722e18a45e18f79efc001a5f694?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:32 ч.
+Request outgoing time: 9.5.2017 г. 21:34:32 ч.
+Request handle timespan: 00:00:00.0080034
+Request URL: http://localhost:59810/
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:34:32 ч.
+Request outgoing time: 9.5.2017 г. 21:34:32 ч.
+Request handle timespan: 00:00:00.0050084
+Request URL: http://localhost:59810/__browserLink/requestData/ce79c8b76b95408cbfc1b79312a57857?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:39:39 ч.
+Request outgoing time: 9.5.2017 г. 21:39:42 ч.
+Request handle timespan: 00:00:03.2293500
+Request URL: http://localhost:59810/book/all
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:39:43 ч.
+Request outgoing time: 9.5.2017 г. 21:39:43 ч.
+Request handle timespan: 00:00:00.0050020
+Request URL: http://localhost:59810/__browserLink/requestData/914403462df74e6ba43b6bb8f29c72a8?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:39:45 ч.
+Request outgoing time: 9.5.2017 г. 21:39:45 ч.
+Request handle timespan: 00:00:00.0300123
+Request URL: http://localhost:59810/book/add
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:39:46 ч.
+Request outgoing time: 9.5.2017 г. 21:39:46 ч.
+Request handle timespan: 00:00:00.0030015
+Request URL: http://localhost:59810/__browserLink/requestData/8bf5c7cf6772456fbaa88af87a4f01e2?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:40:25 ч.
+Request outgoing time: 9.5.2017 г. 21:40:28 ч.
+Request handle timespan: 00:00:03.2434962
+Request URL: http://localhost:59810/book/add
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:40:28 ч.
+Request outgoing time: 9.5.2017 г. 21:40:28 ч.
+Request handle timespan: 00:00:00.0190073
+Request URL: http://localhost:59810/favicon.ico
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:40:28 ч.
+Request outgoing time: 9.5.2017 г. 21:40:28 ч.
+Request handle timespan: 00:00:00.0030012
+Request URL: http://localhost:59810/__browserLink/requestData/ce8060e156c64ce8ababfddb0b2f6a8e?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:40:46 ч.
+Request outgoing time: 9.5.2017 г. 21:40:46 ч.
+Request handle timespan: 00:00:00.0212169
+Request URL: http://localhost:59810/books/all
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:40:52 ч.
+Request outgoing time: 9.5.2017 г. 21:40:52 ч.
+Request handle timespan: 00:00:00.0219536
+Request URL: http://localhost:59810/book/all
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:40:53 ч.
+Request outgoing time: 9.5.2017 г. 21:40:53 ч.
+Request handle timespan: 00:00:00.0050016
+Request URL: http://localhost:59810/__browserLink/requestData/49341a8bb3964695a4950ce7e49636fe?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:41:02 ч.
+Request outgoing time: 9.5.2017 г. 21:41:05 ч.
+Request handle timespan: 00:00:03.2820612
+Request URL: http://localhost:59810/book/add
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:41:05 ч.
+Request outgoing time: 9.5.2017 г. 21:41:05 ч.
+Request handle timespan: 00:00:00.0030018
+Request URL: http://localhost:59810/__browserLink/requestData/f3a23e3a766a4e519020676bef16477e?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:41:07 ч.
+Request outgoing time: 9.5.2017 г. 21:41:07 ч.
+Request handle timespan: 00:00:00.0230105
+Request URL: http://localhost:59810/book/all
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:41:07 ч.
+Request outgoing time: 9.5.2017 г. 21:41:07 ч.
+Request handle timespan: 00:00:00.0050016
+Request URL: http://localhost:59810/__browserLink/requestData/ba5e0848695b439ab909443ad354eb49?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:41:55 ч.
+Request outgoing time: 9.5.2017 г. 21:41:55 ч.
+Request handle timespan: 00:00:00.0080024
+Request URL: http://localhost:59810/
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:41:56 ч.
+Request outgoing time: 9.5.2017 г. 21:41:56 ч.
+Request handle timespan: 00:00:00.0050007
+Request URL: http://localhost:59810/__browserLink/requestData/64e17b4f6f6b411dae9d3b9c73d82128?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:42:00 ч.
+Request outgoing time: 9.5.2017 г. 21:42:00 ч.
+Request handle timespan: 00:00:00.0159931
+Request URL: http://localhost:59810/book/all
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 21:42:01 ч.
+Request outgoing time: 9.5.2017 г. 21:42:01 ч.
+Request handle timespan: 00:00:00.0130047
+Request URL: http://localhost:59810/__browserLink/requestData/a53229676a93488f937b7a24cf0afa3b?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:01:42 ч.
+Request outgoing time: 9.5.2017 г. 22:01:46 ч.
+Request handle timespan: 00:00:03.7555038
+Request URL: http://localhost:59810/
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:01:46 ч.
+Request outgoing time: 9.5.2017 г. 22:01:46 ч.
+Request handle timespan: 00:00:00.0343130
+Request URL: http://localhost:59810/__browserLink/requestData/3d4fe90729804dd0936152e55d9b137a?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:01:49 ч.
+Request outgoing time: 9.5.2017 г. 22:01:49 ч.
+Request handle timespan: 00:00:00.0050017
+Request URL: http://localhost:59810/book/add
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:01:49 ч.
+Request outgoing time: 9.5.2017 г. 22:01:50 ч.
+Request handle timespan: 00:00:00.5185956
+Request URL: http://localhost:59810/Account/Login?ReturnUrl=%2Fbook%2Fadd
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:01:50 ч.
+Request outgoing time: 9.5.2017 г. 22:01:50 ч.
+Request handle timespan: 00:00:00.0030009
+Request URL: http://localhost:59810/__browserLink/requestData/2631e0558c2d456890732f8afad6c8f8?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:01:51 ч.
+Request outgoing time: 9.5.2017 г. 22:01:51 ч.
+Request handle timespan: 00:00:00.0060017
+Request URL: http://localhost:59810/Account/ExternalLogin?ReturnUrl=%2Fbook%2Fadd
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:01:51 ч.
+Request outgoing time: 9.5.2017 г. 22:01:52 ч.
+Request handle timespan: 00:00:00.3766995
+Request URL: http://localhost:59810/signin-facebook?code=AQBpWzZeLbH6EKiccgbjNWZksauPwRS6ERkRmes5jFSBWUoGUrqqKoyP4b6W-k-_LjcOhUyEKEfln6vGCB1mLg44S1cKdztdduz4eClhZTnrV34DRvgv6wmnc-bSCQh5-tOlJ8P04_H9hh6olXeQ4B0VCcoSf38QJWtAASAJywAUXdPPj209P9wYa3_tReKjZolJG4x4hQJDU97p1d4lx2hIH1iOa6KAsvvHlK8rytWDJSUkG7pWsyyf_3K8CoC1RSaEToo8m537U0KMany4LP9iqgXqRVlHwnUk5Kd3vtdfLS5ds5DmiutEEcoibDvxvcus22f7gXWWcBx1I_BemRGb&state=SUitXm0-w15qmR2OUkcIoZ02MEDTmLBOZ6oOATruI2yT5UCoJ3SYGylo50Hz-z8l9t_D4JzMbnh0626MT8ka8K2lFkSYAEBZrbB5lO39JlUUtSbvVotWvgv4LpbkP9vWQXzelXPxRviY9_tKGWaYpAjafRE1HNjkq7d1akaMe-EY6zKxnOcbZnFll6eFiuu-2awnvLBbI4gSZ96TU_Rc3b4l0UY0yS-WzBO-HhXE75DfCEjU9niOZZcAlD44u35d3pDXDfkh1ZQWOiIjc3BFKQ
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:01:52 ч.
+Request outgoing time: 9.5.2017 г. 22:01:52 ч.
+Request handle timespan: 00:00:00.4013131
+Request URL: http://localhost:59810/Account/ExternalLoginCallback?ReturnUrl=%2Fbook%2Fadd
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:01:52 ч.
+Request outgoing time: 9.5.2017 г. 22:01:52 ч.
+Request handle timespan: 00:00:00.3302649
+Request URL: http://localhost:59810/book/add
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:01:52 ч.
+Request outgoing time: 9.5.2017 г. 22:01:52 ч.
+Request handle timespan: 00:00:00.0030003
+Request URL: http://localhost:59810/__browserLink/requestData/119d961988ca4746bf89f380b3dce245?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:27 ч.
+Request outgoing time: 9.5.2017 г. 22:29:30 ч.
+Request handle timespan: 00:00:02.2672479
+Request URL: http://localhost:59810/
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:30 ч.
+Request outgoing time: 9.5.2017 г. 22:29:30 ч.
+Request handle timespan: 00:00:00.0483840
+Request URL: http://localhost:59810/__browserLink/requestData/f88cea1f39884bd2bc451b7db03fccf0?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:33 ч.
+Request outgoing time: 9.5.2017 г. 22:29:33 ч.
+Request handle timespan: 00:00:00.4592983
+Request URL: http://localhost:59810/book/all
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:34 ч.
+Request outgoing time: 9.5.2017 г. 22:29:34 ч.
+Request handle timespan: 00:00:00.0050020
+Request URL: http://localhost:59810/__browserLink/requestData/fe04154707d84ce286ab49e6d445079b?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:37 ч.
+Request outgoing time: 9.5.2017 г. 22:29:37 ч.
+Request handle timespan: 00:00:00.0070014
+Request URL: http://localhost:59810/
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:38 ч.
+Request outgoing time: 9.5.2017 г. 22:29:38 ч.
+Request handle timespan: 00:00:00.0040053
+Request URL: http://localhost:59810/__browserLink/requestData/93c022608b1c4da2ac6ab14685803e9e?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:39 ч.
+Request outgoing time: 9.5.2017 г. 22:29:39 ч.
+Request handle timespan: 00:00:00.0151923
+Request URL: http://localhost:59810/book/all
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:40 ч.
+Request outgoing time: 9.5.2017 г. 22:29:40 ч.
+Request handle timespan: 00:00:00.0050007
+Request URL: http://localhost:59810/__browserLink/requestData/838b52f1ddbc4edc922dd8b88ed61094?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:40 ч.
+Request outgoing time: 9.5.2017 г. 22:29:40 ч.
+Request handle timespan: 00:00:00.0231403
+Request URL: http://localhost:59810/book/all/author
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:41 ч.
+Request outgoing time: 9.5.2017 г. 22:29:41 ч.
+Request handle timespan: 00:00:00.0050038
+Request URL: http://localhost:59810/__browserLink/requestData/985db28858c4454d9833c6c38ced293c?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:41 ч.
+Request outgoing time: 9.5.2017 г. 22:29:41 ч.
+Request handle timespan: 00:00:00.0149909
+Request URL: http://localhost:59810/book/all/title
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:41 ч.
+Request outgoing time: 9.5.2017 г. 22:29:41 ч.
+Request handle timespan: 00:00:00.0050013
+Request URL: http://localhost:59810/__browserLink/requestData/16aac62c261f45ee8c303678ab1966b9?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:42 ч.
+Request outgoing time: 9.5.2017 г. 22:29:42 ч.
+Request handle timespan: 00:00:00.0154032
+Request URL: http://localhost:59810/book/all/opinions
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:42 ч.
+Request outgoing time: 9.5.2017 г. 22:29:43 ч.
+Request handle timespan: 00:00:00.0050013
+Request URL: http://localhost:59810/__browserLink/requestData/546f2e19396f42cc82132bc3aa19af91?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:43 ч.
+Request outgoing time: 9.5.2017 г. 22:29:43 ч.
+Request handle timespan: 00:00:00.0159913
+Request URL: http://localhost:59810/book/all/rating
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:43 ч.
+Request outgoing time: 9.5.2017 г. 22:29:43 ч.
+Request handle timespan: 00:00:00.0050013
+Request URL: http://localhost:59810/__browserLink/requestData/1ecc219fd7ab4e6ea5fb57e0027819ef?version=2
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:45 ч.
+Request outgoing time: 9.5.2017 г. 22:29:45 ч.
+Request handle timespan: 00:00:00.0121681
+Request URL: http://localhost:59810/book/all/rating?Search=ds
+----------------------------------------
+Request log: 
+Request income time: 9.5.2017 г. 22:29:46 ч.
+Request outgoing time: 9.5.2017 г. 22:29:46 ч.
+Request handle timespan: 00:00:00.0030011
+Request URL: http://localhost:59810/__browserLink/requestData/0384f257f4ca45acbdcdd5d0a028c01b?version=2
+----------------------------------------

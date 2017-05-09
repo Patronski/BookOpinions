@@ -5,15 +5,15 @@
 }
 
 <h2>Add</h2>
-
+<h4>Book</h4>
+<hr />
+<p>Be shure the book you want to add is not already added. Try to search it first @Html.ActionLink("here", "all", "book")!</p>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>Book</h4>
-        <hr />
         @Html.ValidationSummary(true, "summaryMessage", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Title, htmlAttributes: new { @class = "control-label col-md-2 col-xs-6" })

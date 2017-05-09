@@ -2,15 +2,13 @@ namespace BookOpinions.Data
 {
     using BookOpinions.Models.EntityModels;
     using Microsoft.AspNet.Identity.EntityFramework;
-    using System;
     using System.Data.Entity;
-    using System.Linq;
 
     public class BookOpinionsContext : IdentityDbContext<ApplicationUser>
     {
         public BookOpinionsContext()
-            : base("data source=.;initial catalog=BookOpinions;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework", throwIfV1Schema: false)
-            //: base("DefaultConnection", throwIfV1Schema: false)
+            //: base("data source=.;initial catalog=BookOpinions;integrated security=True;MultipleActiveResultSets=True;App=EntityFramework", throwIfV1Schema: false)
+            : base("name=BookOpinions", throwIfV1Schema: false)
         {
         }
 
