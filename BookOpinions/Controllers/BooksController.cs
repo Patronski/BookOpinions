@@ -21,6 +21,7 @@ namespace BookOpinions.Controllers
         }
 
         #region Get
+        [HandleError()]
         [Route("book/add")]
         [Authorize(Roles = "User, Admin")]
         public ActionResult Add()
@@ -28,6 +29,7 @@ namespace BookOpinions.Controllers
             return View();
         }
 
+        [HandleError()]
         [Route("book/all/{sortOrder?}/{page?}/{search?}")]
         [Authorize(Roles = "User, Admin")]
         public ActionResult All(string sortOrder, int? page, string search)
@@ -37,6 +39,7 @@ namespace BookOpinions.Controllers
             return View(vm);
         }
 
+        [HandleError()]
         [Route("book/{id}")]
         public ActionResult About(int id)
         {
@@ -46,6 +49,7 @@ namespace BookOpinions.Controllers
             return View(vm);
         }
 
+        [HandleError()]
         [Route("book/edit")]
         [Authorize(Roles = "Admin")]
         [Authorize(Roles = "User, Admin")]
@@ -64,6 +68,7 @@ namespace BookOpinions.Controllers
         /// <param name="id"></param>
         /// <param name="url"></param>
         /// <returns></returns>
+        [HandleError()]
         [Route("book/SendRating/{vote}/{s}/{id}/{url}")]
         public JsonResult SendRating(string vote, string s, string id, string url)
         {
@@ -159,6 +164,7 @@ namespace BookOpinions.Controllers
         #endregion
 
         #region Post
+        [HandleError()]
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("book/add")]
@@ -176,6 +182,7 @@ namespace BookOpinions.Controllers
             return this.RedirectToAction("add", bm);
         }
 
+        [HandleError()]
         [HttpPost]
         [Route("book/comment")]
         [Authorize(Roles = "User, Admin")]
@@ -190,6 +197,7 @@ namespace BookOpinions.Controllers
             return RedirectToAction("about", routeValues: new { id = bm.BookId });
         }
 
+        [HandleError()]
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("book/deleteComment/{id}")]
@@ -200,6 +208,7 @@ namespace BookOpinions.Controllers
             return this.RedirectToAction("about", new { id = bookId });
         }
 
+        [HandleError()]
         [HttpPost]
         [Authorize(Roles = "Admin")]
         [ValidateAntiForgeryToken]
@@ -217,6 +226,7 @@ namespace BookOpinions.Controllers
             return this.RedirectToAction("about", "book", routeValues: new { id = id });
         }
 
+        [HandleError()]
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("book/edit")]

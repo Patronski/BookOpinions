@@ -36,7 +36,7 @@ namespace BookOpinions.Modules
             requestLog.AppendLine($"Request URL: {this._url}");
             requestLog.AppendLine(new string('-', 40));
 
-            File.AppendAllText(fullPath, requestLog.ToString());
+            //File.AppendAllText(fullPath, requestLog.ToString());
         }
 
         private void SetUrlOfRequest(object sender, EventArgs e)

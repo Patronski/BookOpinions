@@ -26,6 +26,14 @@ namespace BookOpinions
             BundleConfig.RegisterBundles(BundleTable.Bundles);
         }
 
+        //todo
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception exception = Server.GetLastError();
+            Server.ClearError();
+            Response.Redirect("/Home/Error");
+        }
+
         private void RegisterMapper()
         {
             Mapper.Initialize(e =>

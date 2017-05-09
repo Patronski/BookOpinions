@@ -19,6 +19,7 @@ namespace BookOpinions.Controllers
         // търсене по заглавие или автор
         // както и пример с картинки от популярни книги в момента
         // моя профил за логнат или 
+        [HandleError()]
         [Route]
         [Route("index")]
         [Route("home/index")]
@@ -36,6 +37,7 @@ namespace BookOpinions.Controllers
             return View(vms);
         }
 
+        [HandleError()]
         [Route("about")]
         public ActionResult About()
         {
@@ -44,6 +46,7 @@ namespace BookOpinions.Controllers
             return View();
         }
 
+        [HandleError()]
         [Route("contacts")]
         public ActionResult Contact()
         {
@@ -52,12 +55,14 @@ namespace BookOpinions.Controllers
             return View();
         }
 
+        [HandleError()]
         [Route("upload")]
         public ActionResult UploadFile()
         {
             return this.View();
         }
 
+        [HandleError()]
         [HttpPost]
         [Route("upload")]
         [ActionName("UploadFile")]
