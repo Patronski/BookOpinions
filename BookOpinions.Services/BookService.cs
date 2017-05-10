@@ -11,7 +11,7 @@ using System.Linq;
 
 namespace BookOpinions.Services
 {
-    public class BookService : Service, IBooksService
+    public class BookService : Service, IBookService
     {
         public void AddNewBook(AddBookBindingModel bm, ApplicationUser currentUser)
         {

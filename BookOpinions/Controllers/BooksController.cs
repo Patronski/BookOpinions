@@ -14,14 +14,14 @@ namespace BookOpinions.Controllers
 {
     public class BookController : BaseController
     {
-        private IBooksService service;
+        private IBookService service;
 
         public BookController()
         : this(new BookService())
         {
         }
 
-        public BookController(IBooksService service)
+        public BookController(IBookService service)
         {
             this.service = service;
         }

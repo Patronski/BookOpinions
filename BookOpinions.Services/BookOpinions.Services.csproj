@@ -46,7 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BookService.cs" />
-    <Compile Include="Contracts\IBooksService.cs" />
+    <Compile Include="Contracts\IBookService.cs" />
     <Compile Include="Contracts\IHomeService.cs" />
     <Compile Include="HomeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

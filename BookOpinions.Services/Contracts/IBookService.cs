@@ -4,7 +4,7 @@ using BookOpinions.Models.ViewModels.Book;
 
 namespace BookOpinions.Services.Contracts
 {
-    public interface IBooksService
+    public interface IBookService
     {
         void AddNewBook(AddBookBindingModel bm, ApplicationUser currentUser);
 
