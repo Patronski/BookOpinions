@@ -2,6 +2,7 @@
 using BookOpinions.Models.EntityModels;
 using BookOpinions.Models.ViewModels.Book;
 using BookOpinions.Services;
+using BookOpinions.Services.Contracts;
 using Microsoft.AspNet.Identity;
 using System;
 using System.Data.Entity;
@@ -13,11 +14,16 @@ namespace BookOpinions.Controllers
 {
     public class BookController : BaseController
     {
-        private BookService service;
+        private IBooksService service;
 
         public BookController()
+        : this(new BookService())
         {
-            this.service = new BookService();
+        }
+
+        public BookController(IBooksService service)
+        {
+            this.service = service;
         }
 
         #region Get

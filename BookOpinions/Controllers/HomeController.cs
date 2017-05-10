@@ -1,5 +1,6 @@
 ﻿using BookOpinions.Models.ViewModels.Home;
 using BookOpinions.Services;
+using BookOpinions.Services.Contracts;
 using System.Collections.Generic;
 using System.IO;
 using System.Web;
@@ -9,10 +10,17 @@ namespace BookOpinions.Controllers
 {
     public class HomeController : BaseController
     {
-        private HomeService service;
+        private IHomeService service;
+
         public HomeController()
+            :this(new HomeService())
         {
-            this.service = new HomeService();
+
+        }
+
+        public HomeController(IHomeService service)
+        {
+            this.service = service;
         }
 
         //избираш си категория на книга измежду много

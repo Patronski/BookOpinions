@@ -5,12 +5,16 @@
     public abstract class Service
     {
         private BookOpinionsContext context;
+        protected BookOpinionsContext Context => this.context;
 
         public Service()
+            :this(new BookOpinionsContext())
         {
-            this.context = new BookOpinionsContext();
         }
 
-        protected BookOpinionsContext Context => this.context;
+        public Service(BookOpinionsContext context)
+        {
+            this.context = context;
+        }
     }
 }
